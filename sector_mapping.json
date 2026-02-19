@@ -1,0 +1,79 @@
+{
+  "_comment": "Maps raw sector (project or property usageTypeSourceValue) to canonical Ingenious-style sectors. Canonical: Special Purpose Facility, Residential, Data Center, Industrial and Logistics, Hotels/Hospitality, Infrastructure/Energy, Retail, Education, Mixed-use, Office",
+  "Office": [
+    "Office", "office", "OFFICE", "Office Building - Class A", "Office Building - Class B", "Office Building - Class C",
+    "Office Building Class A", "Class B Office", "High-rise", "Headquarters", "Office/Engineering",
+    "Office Building", "Office Space", "OFB-Office Building", "Corporate Office", "Corporate Campus", "Corporate Headquarters",
+    "Corporate", "corporate", "Corporate Office/Campus/Headquarters", "Office/Campus/Headquarters", "Class A Office",
+    "office building", "Commercial Office", "Commercial Office Building", "Office/ Lab", "Office/Lab", "Class A Office Space",
+    "Corporate office", "Corporate Office Building", "Office/Campus", "Campus", "campus", "Business Center",
+    "Office building", "Offices", "corporate office", "Leased Space", "Office Head Quarters", "Office Interiors",
+    "Headquarters/Campus", "Commercial Building", "commercial office building", "Corp. Office", "Corporate Offices",
+    "Class A", "Commercial Interior", "commercial property", "Class A commercial office building", "Commercial Lease Space",
+    "Suburban Office Building", "Office/R&D", "Office / Engineering", "Corporate Office/Campus/HQ", "Office Sublease",
+    "Corporate Office/Warehouse", "Commercial / Office", "Lab/Office building", "Office & Training Center",
+    "B Class Office", "Lab/Office", "HQ Building", "office/lab", "Class A Office Building", "Flex", "Regional Office",
+    "Flex Office", "Corporate Facility", "Office Expansion", "Office Tower", "First Generation Office space",
+    "Corporate/Campus/Headquarters", "Office/ Warehouse", "Corporate / Warehouse", "Admin office", "Corporate Center",
+    "Office Buildling", "Office Complex", "Mixed use office building", "Class A Building", "High Rise Building",
+    "Skyscraper", "Owner Occupied", "Owner Occupy", "Owner", "Occupier", "Owned", "Leased", "leased", "Lease", "Lease only",
+    "Leased Property", "Tenant Building / Commercial", "Tenant Occupancy", "Client Service Delivery", "Direct Bill",
+    "Office Building - Owner Occupied", "Class A Office Building", "Multi-Use Office Building", "Corporate Office & Event Space",
+    "Office/Research/Healthcare", "Corporate Office / Warehouse", "Laboratories and Corporate Offices", "Corporate Office/Life Science",
+    "Corporate Office/Test Kitchen", "Corporate Office/Lab Space", "Corporate Office/Lab", "Corporate Office/Campus/HQ",
+    "Spec Suite", "New 1st Generation", "New build", "New Build", "New Construction", "Redevelopment - Office Whitebox",
+    "Interior Upfit", "Fitout", "Additions/Alterations", "Major Renovation", "Development", "Refresh", "Hybrid",
+    "Commerical", "commercial", "commercial building", "commercial property", "Commercial", "Institutional",
+    "IT Building", "Service Center", "Teleworker", "Req'd by PDS"
+  ],
+  "Retail": [
+    "Retail", "retail", "Retail Branch - pad", "Retail Branch - strip center", "Retail Branch - enclosed mall",
+    "Retail Branch", "Branch",
+    "Retail Enclosed Mall", "Retail  Commercial", "Retail/St Frnt.", "Retail Restaurant", "Shopping Center",
+    "Show Room", "Design Center Showroom", "Healthcare retail", "Retail, Healthcare", "Bank", "Bank Branch",
+    "Financial Institution", "FCN-Financial Center", "ATM", "ATM-ATM", "NDS-Night Drops"
+  ],
+  "Industrial and Logistics": [
+    "Industrial and Logistics", "Industrial & Logistics", "Industrial", "INDUSTRIAL", "Industrial Warehouse/Distribut",
+    "Industrial Office Park", "Office, Manufacturing",
+    "Industrial Warehouse/Distribution", "Warehouse/Manufacturing", "Warehouse", "warehouse", "Manufacturing",
+    "Factory/Manufacturing", "Industrial & Manufacturing", "Industrial Warehouse", "Office/Warehouse/Manufacturing",
+    "Warehouse Shipping Sort Center", "Industrial Office", "Distribution facility", "Industrial/ Warehouse",
+    "Light Industrial", "Light Industrial Building", "Distribution Center", "Flex Industrial", "Manufacturing Plant",
+    "Production Facility", "Warehouse / Manufacturing", "Manufacturer", "Leased warehouse", "Insustrial"
+  ],
+  "Data Center": [
+    "Data Center", "Data Centers", "Crit Facility/Call Ctr/Data Ct", "Data Center/Call Center", "Call Center", "Office & Data Center",
+    "Manufacturing / Lab / Data", "Control Room", "Dry Electronics Lab"
+  ],
+  "Hotels/Hospitality": [
+    "Hotels", "Hotel", "hotel", "Hospitality", "Hotels and Hospitality", "Lodging and Hospitality",
+    "Leisure/Hospitality", "Restaurant", "sports", "Stadium", "Entertainment", "Performing Arts", "Performing Arts/Museum",
+    "Museum", "Convention Center"
+  ],
+  "Residential": [
+    "Residential", "Residential Apartment/Condo", "Multi-Family", "multifamily", "Multifamily", "Living and Multi-housing",
+    "Higher Education Housing"
+  ],
+  "Education": [
+    "Education Facility", "Educational Facility - K-13", "Educational Facility", "School", "Classroom", "Higher Education",
+    "Educational", "Daycare", "Education"
+  ],
+  "Mixed-use": [
+    "Mixed-use", "Mixed Use", "Mixed-Use", "Multi-use Facility", "Multi use", "Multi Use", "Multi-Use"
+  ],
+  "Infrastructure/Energy": [
+    "Infrastructure and Energy", "Infrastructure/Equipment Install", "Transportation Facility", "Train Station",
+    "Garage/Parking Structure", "Parking Lot", "Commuter Lot", "Municipal Park", "Municipal", "Government",
+    "PRL-Surface Parking", "Personal Garage"
+  ],
+  "Special Purpose Facility": [
+    "Special Purpose Facility", "Hospital", "Healthcare", "Health Care Facility", "Health Care", "Medical Office", "Research Laboratory",
+    "Healthcare Facility", "Life Sciences", "Life Science", "Life Science (Lab/Office)", "Clinic", "Medical Office Building",
+    "Medical", "Healthcare facility", "Dental Clinic", "Mental Health Care Facility", "Health Care Clinic",
+    "Medical office building", "MOB", "Church", "Religous", "Other", "Unknown", "TBC", "Land", "Void", "Building",
+    "Lab", "Research", "Studios", "Decommission", "Vacant Land", "Agricultural", "Behavioral Health",
+    "Alcohol Treatment Center", "Construction", "Adaptive Reuse", "Multi-Storey Building", "Rental", "Existing",
+    "NA", "null"
+  ]
+}

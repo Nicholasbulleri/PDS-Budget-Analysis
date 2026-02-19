@@ -1,0 +1,180 @@
+{
+  "tables": [
+    {
+      "table_name": "commitment",
+      "source_systems": [
+        {
+          "name": "clarizen",
+          "row_count": 5764167
+        },
+        {
+          "name": "ingenious",
+          "row_count": 3999
+        }
+      ],
+      "source_system_count": 2,
+      "countries": [],
+      "country_count": 0,
+      "regions": [],
+      "region_count": 0,
+      "has_source_system": true,
+      "has_country": false,
+      "has_region": false
+    },
+    {
+      "table_name": "budgetdetail",
+      "source_systems": [
+        {
+          "name": "clarizen",
+          "row_count": 5658501
+        }
+      ],
+      "source_system_count": 1,
+      "countries": [],
+      "country_count": 0,
+      "regions": [],
+      "region_count": 0,
+      "has_source_system": true,
+      "has_country": false,
+      "has_region": false
+    },
+    {
+      "table_name": "budgetchange",
+      "source_systems": [
+        {
+          "name": "clarizen",
+          "row_count": 5643301
+        }
+      ],
+      "source_system_count": 1,
+      "countries": [],
+      "country_count": 0,
+      "regions": [],
+      "region_count": 0,
+      "has_source_system": true,
+      "has_country": false,
+      "has_region": false
+    },
+    {
+      "table_name": "budgetforecast",
+      "source_systems": [
+        {
+          "name": "clarizen",
+          "row_count": 5554150
+        }
+      ],
+      "source_system_count": 1,
+      "countries": [],
+      "country_count": 0,
+      "regions": [],
+      "region_count": 0,
+      "has_source_system": true,
+      "has_country": false,
+      "has_region": false
+    },
+    {
+      "table_name": "directorycontactprojectlnk",
+      "source_systems": [
+        {
+          "name": "clarizen",
+          "row_count": 1160152
+        },
+        {
+          "name": "ingenious",
+          "row_count": 27923
+        }
+      ],
+      "source_system_count": 2,
+      "countries": [],
+      "country_count": 0,
+      "regions": [],
+      "region_count": 0,
+      "has_source_system": true,
+      "has_country": false,
+      "has_region": false
+    },
+    {
+      "table_name": "companysourcesystemrelationship",
+      "source_systems": [
+        {
+          "name": "clarizen",
+          "row_count": 68872
+        }
+      ],
+      "source_system_count": 1,
+      "countries": [],
+      "country_count": 0,
+      "regions": [],
+      "region_count": 0,
+      "has_source_system": true,
+      "has_country": false,
+      "has_region": false
+    },
+    {
+      "table_name": "customvalue",
+      "source_systems": [
+        {
+          "name": "clarizen",
+          "row_count": 41723
+        }
+      ],
+      "source_system_count": 1,
+      "countries": [],
+      "country_count": 0,
+      "regions": [],
+      "region_count": 0,
+      "has_source_system": true,
+      "has_country": false,
+      "has_region": false
+    },
+    {
+      "table_name": "costsave",
+      "source_systems": [
+        {
+          "name": "clarizen",
+          "row_count": 34877
+        },
+        {
+          "name": "ingenious",
+          "row_count": 2231
+        }
+      ],
+      "source_system_count": 2,
+      "countries": [],
+      "country_count": 0,
+      "regions": [],
+      "region_count": 0,
+      "has_source_system": true,
+      "has_country": false,
+      "has_region": false
+    }
+  ],
+  "summary": {
+    "total_source_systems": 2,
+    "source_systems": {
+      "clarizen": {
+        "total_rows": 23925743,
+        "tables": [
+          "commitment",
+          "budgetdetail",
+          "budgetchange",
+          "budgetforecast",
+          "directorycontactprojectlnk",
+          "companysourcesystemrelationship",
+          "customvalue",
+          "costsave"
+        ]
+      },
+      "ingenious": {
+        "total_rows": 34153,
+        "tables": [
+          "commitment",
+          "directorycontactprojectlnk",
+          "costsave"
+        ]
+      }
+    },
+    "total_countries": 0,
+    "countries": {}
+  }
+}

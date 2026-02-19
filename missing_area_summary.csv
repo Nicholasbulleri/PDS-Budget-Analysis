@@ -1,0 +1,7 @@
+metric,value
+Distinct projects with budget (any area),50166
+Distinct projects with budget AND positive area,18219
+Distinct projects with budget but MISSING/ZERO area,31947
+Output rows (include missing area),9686
+Output rows (exclude missing area),6621
+Output row difference,3065

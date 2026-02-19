@@ -1,0 +1,2978 @@
+{
+  "total_tables": 391,
+  "tables_with_upstream": 60,
+  "system_lineage_available": false,
+  "views_processed": 60,
+  "lineage": {
+    "accountbalances": {
+      "table_name": "accountbalances",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "accounthierarchy": {
+      "table_name": "accounthierarchy",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "accountledger": {
+      "table_name": "accountledger",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "accountmaster": {
+      "table_name": "accountmaster",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "accountmastercategory": {
+      "table_name": "accountmastercategory",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "accountpayableledger": {
+      "table_name": "accountpayableledger",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "accountstyle": {
+      "table_name": "accountstyle",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "action": {
+      "table_name": "action",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "address": {
+      "table_name": "address",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "addresstosmartzone": {
+      "table_name": "addresstosmartzone",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "adl_active_pipeline_snapshot_silver": {
+      "table_name": "adl_active_pipeline_snapshot_silver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "adl_bookings_detail_silver": {
+      "table_name": "adl_bookings_detail_silver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "adl_bookings_summary_silver": {
+      "table_name": "adl_bookings_summary_silver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "adl_netsuite_booking_silver": {
+      "table_name": "adl_netsuite_booking_silver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "adl_netsuite_net_revenue_retention_silver": {
+      "table_name": "adl_netsuite_net_revenue_retention_silver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "adl_netsuite_revenue_silver": {
+      "table_name": "adl_netsuite_revenue_silver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "adl_pipeline_silver": {
+      "table_name": "adl_pipeline_silver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "adl_pipeline_walk_dssf_silver": {
+      "table_name": "adl_pipeline_walk_dssf_silver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "altchartofaccounts": {
+      "table_name": "altchartofaccounts",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "alternateaccount": {
+      "table_name": "alternateaccount",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "alternatebusinessunit": {
+      "table_name": "alternatebusinessunit",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "annualcost": {
+      "table_name": "annualcost",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "answer": {
+      "table_name": "answer",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "approvaltemplate": {
+      "table_name": "approvaltemplate",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "areaemployeestatistics": {
+      "table_name": "areaemployeestatistics",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "asset": {
+      "table_name": "asset",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "assetattributes": {
+      "table_name": "assetattributes",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "assetattributestemplates": {
+      "table_name": "assetattributestemplates",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "assetlog": {
+      "table_name": "assetlog",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "assignments": {
+      "table_name": "assignments",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "assumptions": {
+      "table_name": "assumptions",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "auditeecustomfield": {
+      "table_name": "auditeecustomfield",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "auditlosttime": {
+      "table_name": "auditlosttime",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "autodispatch": {
+      "table_name": "autodispatch",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "bid": {
+      "table_name": "bid",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "billingevent": {
+      "table_name": "billingevent",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "billingeventitem": {
+      "table_name": "billingeventitem",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "budget_opportunity": {
+      "table_name": "budget_opportunity",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "budget_projects": {
+      "table_name": "budget_projects",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "budgetchange": {
+      "table_name": "budgetchange",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "budgetdetail": {
+      "table_name": "budgetdetail",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "budgetforecast": {
+      "table_name": "budgetforecast",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "businessunit": {
+      "table_name": "businessunit",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "businessunitcategory": {
+      "table_name": "businessunitcategory",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "businessunitsmasterproperty": {
+      "table_name": "businessunitsmasterproperty",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "businessunittag": {
+      "table_name": "businessunittag",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "busline": {
+      "table_name": "busline",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "cad_simulationdm": {
+      "table_name": "cad_simulationdm",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "case": {
+      "table_name": "case",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "changerequest": {
+      "table_name": "changerequest",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "colb_wdgemvw": {
+      "table_name": "colb_wdgemvw",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "colb_wdleaseareacategory": {
+      "table_name": "colb_wdleaseareacategory",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "colb_wdleasecostcategory": {
+      "table_name": "colb_wdleasecostcategory",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "colb_wdleaseeventcategory": {
+      "table_name": "colb_wdleaseeventcategory",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "colb_wdoscrevw": {
+      "table_name": "colb_wdoscrevw",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "colb_wdspacetypeoscremappingvw": {
+      "table_name": "colb_wdspacetypeoscremappingvw",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "commercialcontract": {
+      "table_name": "commercialcontract",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "commissions": {
+      "table_name": "commissions",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "commitment": {
+      "table_name": "commitment",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "commitmentchanges": {
+      "table_name": "commitmentchanges",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companybusinessunit": {
+      "table_name": "companybusinessunit",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companyclient": {
+      "table_name": "companyclient",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companyclientextended": {
+      "table_name": "companyclientextended",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companycontact": {
+      "table_name": "companycontact",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companycustomfms": {
+      "table_name": "companycustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companyextended": {
+      "table_name": "companyextended",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companyorganisation": {
+      "table_name": "companyorganisation",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companyorganisationassignment": {
+      "table_name": "companyorganisationassignment",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companyorganisationassignmentcustomfms": {
+      "table_name": "companyorganisationassignmentcustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companyorganisationcustomfms": {
+      "table_name": "companyorganisationcustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "companysourcesystemrelationship": {
+      "table_name": "companysourcesystemrelationship",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "contactextended": {
+      "table_name": "contactextended",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "contract": {
+      "table_name": "contract",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "conversionunit": {
+      "table_name": "conversionunit",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "costcentre": {
+      "table_name": "costcentre",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "costmetrics": {
+      "table_name": "costmetrics",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "costsave": {
+      "table_name": "costsave",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "costtype": {
+      "table_name": "costtype",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "cs_employee": {
+      "table_name": "cs_employee",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "currencyexchangerate": {
+      "table_name": "currencyexchangerate",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "customattribute": {
+      "table_name": "customattribute",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "customclientprojectinformation": {
+      "table_name": "customclientprojectinformation",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "customer": {
+      "table_name": "customer",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "customergroups": {
+      "table_name": "customergroups",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "customergroupslinkage": {
+      "table_name": "customergroupslinkage",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "customfield": {
+      "table_name": "customfield",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "customvalue": {
+      "table_name": "customvalue",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "datefiscalpatterns": {
+      "table_name": "datefiscalpatterns",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "dealdetails": {
+      "table_name": "dealdetails",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "directorycontactprojectlnk": {
+      "table_name": "directorycontactprojectlnk",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "document": {
+      "table_name": "document",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "dssf_invoice_details": {
+      "table_name": "dssf_invoice_details",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "dssf_opplineitem_processed": {
+      "table_name": "dssf_opplineitem_processed",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "dssf_opportunity_processed": {
+      "table_name": "dssf_opportunity_processed",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "dssf_report_project": {
+      "table_name": "dssf_report_project",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "electronicaddress": {
+      "table_name": "electronicaddress",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "employeefuturemove": {
+      "table_name": "employeefuturemove",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "employeefuturemovecustomfms": {
+      "table_name": "employeefuturemovecustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "employeehistoricmove": {
+      "table_name": "employeehistoricmove",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "employeehistoricmovecustomfms": {
+      "table_name": "employeehistoricmovecustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "enhancementrequest": {
+      "table_name": "enhancementrequest",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "equipment": {
+      "table_name": "equipment",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "equipmentrefrigerantlog": {
+      "table_name": "equipmentrefrigerantlog",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "execsummary": {
+      "table_name": "execsummary",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "externalemployee": {
+      "table_name": "externalemployee",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "externalemployeecustomfms": {
+      "table_name": "externalemployeecustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "externalemployeespacerelationship": {
+      "table_name": "externalemployeespacerelationship",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "externalemployeespacerelationshipcustomfms": {
+      "table_name": "externalemployeespacerelationshipcustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "externalemployeezonerelationship": {
+      "table_name": "externalemployeezonerelationship",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "floors": {
+      "table_name": "floors",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "floorscustomfms": {
+      "table_name": "floorscustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "game_account_list": {
+      "table_name": "game_account_list",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_account_list",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_account_strategy": {
+      "table_name": "game_account_strategy",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_account_strategy",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_action_plans": {
+      "table_name": "game_action_plans",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_action_plans",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_client_contacts": {
+      "table_name": "game_client_contacts",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_client_contacts",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_client_drivers": {
+      "table_name": "game_client_drivers",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_client_drivers",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_client_engagement": {
+      "table_name": "game_client_engagement",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_client_engagement",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_clientmarketintelligence": {
+      "table_name": "game_clientmarketintelligence",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_clientmarketintelligence",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_contracts": {
+      "table_name": "game_contracts",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_contracts",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_growth_plans": {
+      "table_name": "game_growth_plans",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_growth_plans",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_kpi_module": {
+      "table_name": "game_kpi_module",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_kpi_module",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_momentum_dq_scores": {
+      "table_name": "game_momentum_dq_scores",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_momentum_dq_scores",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_risk_register": {
+      "table_name": "game_risk_register",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_risk_register",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_strengths_weaknesses": {
+      "table_name": "game_strengths_weaknesses",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_strengths_weaknesses",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_support_required": {
+      "table_name": "game_support_required",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_support_required",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "game_value_add": {
+      "table_name": "game_value_add",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "game_value_add",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "generictask": {
+      "table_name": "generictask",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "glrecringevents": {
+      "table_name": "glrecringevents",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "glrecurringevents": {
+      "table_name": "glrecurringevents",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "groupcustomfield": {
+      "table_name": "groupcustomfield",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "grouphierarchy": {
+      "table_name": "grouphierarchy",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "grouplocation": {
+      "table_name": "grouplocation",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "groups": {
+      "table_name": "groups",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "headdeskinformation": {
+      "table_name": "headdeskinformation",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "heldorders": {
+      "table_name": "heldorders",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_hcart_trainingactivity": {
+      "table_name": "historicalsnapshot_hcart_trainingactivity",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_leaseadminclientkpi": {
+      "table_name": "historicalsnapshot_leaseadminclientkpi",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_leaseadminclientstats": {
+      "table_name": "historicalsnapshot_leaseadminclientstats",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_leaseadmincontractatributes": {
+      "table_name": "historicalsnapshot_leaseadmincontractatributes",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_leaseadmincontracts": {
+      "table_name": "historicalsnapshot_leaseadmincontracts",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_leaseadmincounts": {
+      "table_name": "historicalsnapshot_leaseadmincounts",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_leaseadmingloballaborallocations": {
+      "table_name": "historicalsnapshot_leaseadmingloballaborallocations",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_op_clientattributesclean": {
+      "table_name": "historicalsnapshot_op_clientattributesclean",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "historicalsnapshot_op_clientclean": {
+      "table_name": "historicalsnapshot_op_clientclean",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "hnsreport": {
+      "table_name": "hnsreport",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "hrhistdata": {
+      "table_name": "hrhistdata",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "hsseassurance": {
+      "table_name": "hsseassurance",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "incident": {
+      "table_name": "incident",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "incidentactivitylog": {
+      "table_name": "incidentactivitylog",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "incidentclasscategory": {
+      "table_name": "incidentclasscategory",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "incidentcorrectiveaction": {
+      "table_name": "incidentcorrectiveaction",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "incidentsitehours": {
+      "table_name": "incidentsitehours",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "incidenttask": {
+      "table_name": "incidenttask",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "inspection": {
+      "table_name": "inspection",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "inspectionmembers": {
+      "table_name": "inspectionmembers",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "inspectiontemplates": {
+      "table_name": "inspectiontemplates",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "intensitytargets": {
+      "table_name": "intensitytargets",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "inventory": {
+      "table_name": "inventory",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "inventorytransaction": {
+      "table_name": "inventorytransaction",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "invoice": {
+      "table_name": "invoice",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "issue": {
+      "table_name": "issue",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "items": {
+      "table_name": "items",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "jll1_acnt_teammember_view": {
+      "table_name": "jll1_acnt_teammember_view",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "jll1_acnt_teammember_view",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "jll1_opp_teammember_view": {
+      "table_name": "jll1_opp_teammember_view",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "jll1_opp_teammember_view",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "jll1_opportunity_lineitem_view": {
+      "table_name": "jll1_opportunity_lineitem_view",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "jll1_opportunity_lineitem_view",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "jobtitle": {
+      "table_name": "jobtitle",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "laborforcestatistics": {
+      "table_name": "laborforcestatistics",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "lease": {
+      "table_name": "lease",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseabstractdiscrepancy": {
+      "table_name": "leaseabstractdiscrepancy",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseadmin_fin_exposure": {
+      "table_name": "leaseadmin_fin_exposure",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmin_fin_exposure",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadmin_pops_kpi": {
+      "table_name": "leaseadmin_pops_kpi",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmin_pops_kpi",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadmin_pops_stats": {
+      "table_name": "leaseadmin_pops_stats",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmin_pops_stats",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadmin_renewal": {
+      "table_name": "leaseadmin_renewal",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmin_renewal",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadminclientatributes": {
+      "table_name": "leaseadminclientatributes",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclientatributes",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclients",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminusers",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadminclientkpi": {
+      "table_name": "leaseadminclientkpi",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclientkpi",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmincontracts",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadminclients": {
+      "table_name": "leaseadminclients",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclients",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadminclientstats": {
+      "table_name": "leaseadminclientstats",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclientstats",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmincontracts",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadmincontractatributes": {
+      "table_name": "leaseadmincontractatributes",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmincontractatributes",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmincontracts",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadmincontracts": {
+      "table_name": "leaseadmincontracts",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmincontracts",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadmincounts": {
+      "table_name": "leaseadmincounts",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmincontracts",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmincounts",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadmingloballaborallocations": {
+      "table_name": "leaseadmingloballaborallocations",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminUsers",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclients",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmingloballaborallocations",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseadminusers": {
+      "table_name": "leaseadminusers",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminusers",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "leaseallowance": {
+      "table_name": "leaseallowance",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseareadetail": {
+      "table_name": "leaseareadetail",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseclauses": {
+      "table_name": "leaseclauses",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseclientspecificdata": {
+      "table_name": "leaseclientspecificdata",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leasecnctbycmpny": {
+      "table_name": "leasecnctbycmpny",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leasecondition": {
+      "table_name": "leasecondition",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseconfiguration": {
+      "table_name": "leaseconfiguration",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leasecontact": {
+      "table_name": "leasecontact",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leasecontactsbycompany": {
+      "table_name": "leasecontactsbycompany",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leasecost": {
+      "table_name": "leasecost",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseevents": {
+      "table_name": "leaseevents",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseinvoicedpayments": {
+      "table_name": "leaseinvoicedpayments",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaselabels": {
+      "table_name": "leaselabels",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leasenotes": {
+      "table_name": "leasenotes",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseparking": {
+      "table_name": "leaseparking",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaserepairsmaintenance": {
+      "table_name": "leaserepairsmaintenance",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leases": {
+      "table_name": "leases",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leasesecuritydeposits": {
+      "table_name": "leasesecuritydeposits",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leasetermandflexibility": {
+      "table_name": "leasetermandflexibility",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "leaseutilizations": {
+      "table_name": "leaseutilizations",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "locations": {
+      "table_name": "locations",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "marketfavourability": {
+      "table_name": "marketfavourability",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "mau_workorders": {
+      "table_name": "mau_workorders",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "meeting": {
+      "table_name": "meeting",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "milestone": {
+      "table_name": "milestone",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "negotiatedfinancials": {
+      "table_name": "negotiatedfinancials",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_booking": {
+      "table_name": "netsuite_booking",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_customer_sales": {
+      "table_name": "netsuite_customer_sales",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_customers_list": {
+      "table_name": "netsuite_customers_list",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_open_sales_order": {
+      "table_name": "netsuite_open_sales_order",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_overdue_customers_list": {
+      "table_name": "netsuite_overdue_customers_list",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_revenue": {
+      "table_name": "netsuite_revenue",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_revenue_recognition_detail": {
+      "table_name": "netsuite_revenue_recognition_detail",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_revenue_recognition_summary": {
+      "table_name": "netsuite_revenue_recognition_summary",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_transaction": {
+      "table_name": "netsuite_transaction",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "netsuite_transactionline": {
+      "table_name": "netsuite_transactionline",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "nonlaborresource": {
+      "table_name": "nonlaborresource",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "nonlaborresourcelnks": {
+      "table_name": "nonlaborresourcelnks",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "nonlaborresourcestimephasedcost": {
+      "table_name": "nonlaborresourcestimephasedcost",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "op_clientattributesclean": {
+      "table_name": "op_clientattributesclean",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clientattributesclean",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clients",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clients_attributes",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_users",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "op_clientclean": {
+      "table_name": "op_clientclean",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clientclean",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clients",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clients_attributes",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_users",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "op_clients": {
+      "table_name": "op_clients",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clients",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "op_clients_attributes": {
+      "table_name": "op_clients_attributes",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clients",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_clients_attributes",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "op_users": {
+      "table_name": "op_users",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "op_users",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "opexrecon": {
+      "table_name": "opexrecon",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "opportunity_projects": {
+      "table_name": "opportunity_projects",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "oval_clientplus": {
+      "table_name": "oval_clientplus",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "oval_clientplus",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "oval_vwRequests",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "oval_vwVariations",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "oval_vwcompanies",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "oval_vwrequests",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "oval_vwcompanies": {
+      "table_name": "oval_vwcompanies",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "oval_vwparentcompanies": {
+      "table_name": "oval_vwparentcompanies",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "oval_vwrequests": {
+      "table_name": "oval_vwrequests",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "oval_vwusage": {
+      "table_name": "oval_vwusage",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "oval_vwuser": {
+      "table_name": "oval_vwuser",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "oval_vwvariations": {
+      "table_name": "oval_vwvariations",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "partyinvolved": {
+      "table_name": "partyinvolved",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "payments": {
+      "table_name": "payments",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "paymentsdetail": {
+      "table_name": "paymentsdetail",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "paymentsterms": {
+      "table_name": "paymentsterms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pds_wd_accountlist": {
+      "table_name": "pds_wd_accountlist",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "pds_wd_accountlist",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "phub_client": {
+      "table_name": "phub_client",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "phub_client",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "phub_criticalenvironmentdetailsdatacenter": {
+      "table_name": "phub_criticalenvironmentdetailsdatacenter",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "phub_criticalenvironmentdetailsdatacenter",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "phub_oneviewclientproperty": {
+      "table_name": "phub_oneviewclientproperty",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "phub_ovcpservices": {
+      "table_name": "phub_ovcpservices",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "phub_ovcpservices",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "pipeline": {
+      "table_name": "pipeline",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pipeline_snapshot": {
+      "table_name": "pipeline_snapshot",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pmrmcost": {
+      "table_name": "pmrmcost",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pmrmprocedure": {
+      "table_name": "pmrmprocedure",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pmrmreqdocuments": {
+      "table_name": "pmrmreqdocuments",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pmrmschedule": {
+      "table_name": "pmrmschedule",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pmrmscheduleevent": {
+      "table_name": "pmrmscheduleevent",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pmrmworkdescription": {
+      "table_name": "pmrmworkdescription",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "portfolio": {
+      "table_name": "portfolio",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "portfolioproperty": {
+      "table_name": "portfolioproperty",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "practice": {
+      "table_name": "practice",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "pricelistitem": {
+      "table_name": "pricelistitem",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "priorities": {
+      "table_name": "priorities",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "procedure": {
+      "table_name": "procedure",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "procedurestep": {
+      "table_name": "procedurestep",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "proceduretemplate": {
+      "table_name": "proceduretemplate",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "product": {
+      "table_name": "product",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "productproforma": {
+      "table_name": "productproforma",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "program": {
+      "table_name": "program",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "project": {
+      "table_name": "project",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "project_backup_20260108_234451": {
+      "table_name": "project_backup_20260108_234451",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "project_history": {
+      "table_name": "project_history",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "project_snapshot": {
+      "table_name": "project_snapshot",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "projectadditionalcustomfield": {
+      "table_name": "projectadditionalcustomfield",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "projectdetails": {
+      "table_name": "projectdetails",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "projectsites": {
+      "table_name": "projectsites",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "projectstatsindicator": {
+      "table_name": "projectstatsindicator",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property": {
+      "table_name": "property",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_archibus": {
+      "table_name": "property_archibus",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_clarizen": {
+      "table_name": "property_clarizen",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_corrigo": {
+      "table_name": "property_corrigo",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_crem": {
+      "table_name": "property_crem",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_fms": {
+      "table_name": "property_fms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_ingenious": {
+      "table_name": "property_ingenious",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_nonovla": {
+      "table_name": "property_nonovla",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_ovla": {
+      "table_name": "property_ovla",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_propertyhub": {
+      "table_name": "property_propertyhub",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "property_tririga": {
+      "table_name": "property_tririga",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "propertycustom": {
+      "table_name": "propertycustom",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "propertycustomfms": {
+      "table_name": "propertycustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "propertyextended": {
+      "table_name": "propertyextended",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "propertyhub_workday_xref": {
+      "table_name": "propertyhub_workday_xref",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "propertyhub_workday_xref",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "propertyresponsibilites": {
+      "table_name": "propertyresponsibilites",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "propertysourcesystemrelationship": {
+      "table_name": "propertysourcesystemrelationship",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "proposal": {
+      "table_name": "proposal",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "proposalitem": {
+      "table_name": "proposalitem",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "punchitemmember": {
+      "table_name": "punchitemmember",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "punchlistitem": {
+      "table_name": "punchlistitem",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "purchaseorderdetail": {
+      "table_name": "purchaseorderdetail",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "purchaseorderheader": {
+      "table_name": "purchaseorderheader",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "purchaseorderreceiver": {
+      "table_name": "purchaseorderreceiver",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "quotes": {
+      "table_name": "quotes",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "ratioconfiguration": {
+      "table_name": "ratioconfiguration",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "relatedworkitem": {
+      "table_name": "relatedworkitem",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "rents": {
+      "table_name": "rents",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "reqdocumenttype": {
+      "table_name": "reqdocumenttype",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "requestor": {
+      "table_name": "requestor",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "revenuecost": {
+      "table_name": "revenuecost",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "risk": {
+      "table_name": "risk",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "riskcontact": {
+      "table_name": "riskcontact",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "riskmembers": {
+      "table_name": "riskmembers",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "rltimephase": {
+      "table_name": "rltimephase",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "roompercentages": {
+      "table_name": "roompercentages",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "saferlearning": {
+      "table_name": "saferlearning",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "safertogethertoday": {
+      "table_name": "safertogethertoday",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "safertogethertoday",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "savings": {
+      "table_name": "savings",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "scanneddocument": {
+      "table_name": "scanneddocument",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "securitydeposit": {
+      "table_name": "securitydeposit",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "services": {
+      "table_name": "services",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "severity": {
+      "table_name": "severity",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "sites": {
+      "table_name": "sites",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "sitescustomfms": {
+      "table_name": "sitescustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "solutions_seller_experience": {
+      "table_name": "solutions_seller_experience",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "solutions_tracking_metrics": {
+      "table_name": "solutions_tracking_metrics",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "space": {
+      "table_name": "space",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "space_inv_fact_series_vw": {
+      "table_name": "space_inv_fact_series_vw",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "company",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "space_inv_fact_series_vw",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "space_inv_fact_vw": {
+      "table_name": "space_inv_fact_vw",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "company",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "companyorganisationassignment",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "externalemployeezonerelationship",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "floors",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "property",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "space",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "space_inv_fact_vw",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "spacezoneassignment",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "zones",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "spacecustomfms": {
+      "table_name": "spacecustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "spacestandardscustomfms": {
+      "table_name": "spacestandardscustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "spacetypescustomfms": {
+      "table_name": "spacetypescustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "spacezoneassignment": {
+      "table_name": "spacezoneassignment",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "specialevents": {
+      "table_name": "specialevents",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "spenditems": {
+      "table_name": "spenditems",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "spendrole": {
+      "table_name": "spendrole",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "staffingdetailedinformation": {
+      "table_name": "staffingdetailedinformation",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "staffinginformation": {
+      "table_name": "staffinginformation",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "subunitinformation": {
+      "table_name": "subunitinformation",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "suppliermaster": {
+      "table_name": "suppliermaster",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "survey": {
+      "table_name": "survey",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "sustainability": {
+      "table_name": "sustainability",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "sustainabilityrecord": {
+      "table_name": "sustainabilityrecord",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "tags": {
+      "table_name": "tags",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "task": {
+      "table_name": "task",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "taskapprovals": {
+      "table_name": "taskapprovals",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "team": {
+      "table_name": "team",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "teamuser": {
+      "table_name": "teamuser",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "teamuser_backup_20251114_170826": {
+      "table_name": "teamuser_backup_20251114_170826",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "testleasecost": {
+      "table_name": "testleasecost",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "timecard": {
+      "table_name": "timecard",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "tm_child_tracker": {
+      "table_name": "tm_child_tracker",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "tm_child_tracker",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "tm_parent_tracker": {
+      "table_name": "tm_parent_tracker",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "tm_parent_tracker",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "trackingworksheet": {
+      "table_name": "trackingworksheet",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "transactioncomments": {
+      "table_name": "transactioncomments",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "transactiondocuments": {
+      "table_name": "transactiondocuments",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "transactionrelation": {
+      "table_name": "transactionrelation",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "transactionrelation_red": {
+      "table_name": "transactionrelation_red",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "transactionrelation",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "transactionrelation_red",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "transactionsteps": {
+      "table_name": "transactionsteps",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "transactionuserdefined": {
+      "table_name": "transactionuserdefined",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "udfsetreference": {
+      "table_name": "udfsetreference",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "udfvaluereference": {
+      "table_name": "udfvaluereference",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "usagemetrics": {
+      "table_name": "usagemetrics",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "userdefinedcodes": {
+      "table_name": "userdefinedcodes",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "usergroup": {
+      "table_name": "usergroup",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "userlibrary": {
+      "table_name": "userlibrary",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "userrole": {
+      "table_name": "userrole",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "userroletask": {
+      "table_name": "userroletask",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "users": {
+      "table_name": "users",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "utilitymeasures": {
+      "table_name": "utilitymeasures",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "utilization": {
+      "table_name": "utilization",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "vendorextended": {
+      "table_name": "vendorextended",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "vendorinsurance": {
+      "table_name": "vendorinsurance",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "vw_boa_pricelist_cbre": {
+      "table_name": "vw_boa_pricelist_cbre",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_boa_pricelist_cbre",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_boa_pricelist_cw": {
+      "table_name": "vw_boa_pricelist_cw",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_boa_pricelist_cw",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_boa_pricelist_jll": {
+      "table_name": "vw_boa_pricelist_jll",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_boa_pricelist_jll",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_corrigo_wpm": {
+      "table_name": "vw_corrigo_wpm",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_corrigo_wpm",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_propertycustom_propertyhub": {
+      "table_name": "vw_propertycustom_propertyhub",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "propertycustom",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_propertycustom_propertyhub",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_sp_commercial_site": {
+      "table_name": "vw_sp_commercial_site",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_sp_commercial_site",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_sp_commercial_terms": {
+      "table_name": "vw_sp_commercial_terms",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_sp_commercial_terms",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_tmessentials_mkt_fvrablty_clk": {
+      "table_name": "vw_tmessentials_mkt_fvrablty_clk",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_tmessentials_mkt_fvrablty_clk",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_utilization_bagdedata_demand": {
+      "table_name": "vw_utilization_bagdedata_demand",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_utilization_bagdedata_demand",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_utilization_bagdedata_supply": {
+      "table_name": "vw_utilization_bagdedata_supply",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_utilization_bagdedata_supply",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vw_utilization_portfolio_analytics": {
+      "table_name": "vw_utilization_portfolio_analytics",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vw_utilization_portfolio_analytics",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "vwleaseadminfinal": {
+      "table_name": "vwleaseadminfinal",
+      "table_type": "VIEW",
+      "upstream": [
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclientatributes",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclients",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadminclientstats",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "leaseadmingloballaborallocations",
+          "source": "view_definition"
+        },
+        {
+          "catalog": "work_dynamics",
+          "schema": "curated",
+          "table": "vwleaseadminfinal",
+          "source": "view_definition"
+        }
+      ],
+      "has_upstream": true
+    },
+    "wd_transaction": {
+      "table_name": "wd_transaction",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "wdaudit": {
+      "table_name": "wdaudit",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workcalendar": {
+      "table_name": "workcalendar",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workfloworderdetail": {
+      "table_name": "workfloworderdetail",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workitem": {
+      "table_name": "workitem",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workorder": {
+      "table_name": "workorder",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workorderitems": {
+      "table_name": "workorderitems",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workorderreqdocuments": {
+      "table_name": "workorderreqdocuments",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workordersassetworkedon": {
+      "table_name": "workordersassetworkedon",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workordertelemtry": {
+      "table_name": "workordertelemtry",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "workorderverification": {
+      "table_name": "workorderverification",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "zones": {
+      "table_name": "zones",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "zonescustomfms": {
+      "table_name": "zonescustomfms",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    },
+    "zonesscope": {
+      "table_name": "zonesscope",
+      "table_type": "MANAGED",
+      "upstream": [],
+      "has_upstream": false
+    }
+  }
+}

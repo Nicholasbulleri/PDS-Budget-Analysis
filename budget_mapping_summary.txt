@@ -1,0 +1,307 @@
+## FF&E + Millwork: 4231 task names
+## Soft Costs: 3176 task names
+## Construction: 3173 task names
+## Uncategorized: 2589 task names
+
+--- Uncategorized (review these) ---
+"Sunken Cost" prior to 2018
+00999950-Agent Capital
+00999955-Agent Expense
+08: Doors & Windows
+10101200-Cleaning
+10104997-Owned Bldg Interior Improve
+10105995-New Building
+1014
+1016
+10201000-Land, all
+10201100-Land
+10201995-Land Improvements
+10204995-Land Improvement
+10204995-Land Improvements
+1023
+1028
+1113
+1116 - Oakwood  D
+1118
+1124
+1135
+11: Specialties - Reduced to reflection locker deduction
+1213
+1218
+1221
+1233
+1417
+1424
+1434
+1513 - Oakwood Down
+1526
+1533
+1534
+184th & E68 Grading/1st Street Coordination
+18: Overhead & Profit
+1x1 Oakwood - B Spec Modern Farm - Unit 1222
+1x1 Oakwood - Upgrade Cozy Class - unit 812
+1x1 Rialto - B Spec Modern Farm - unit 532
+1x1 Rialto - Upgrade Cozy Class- unit 212
+20101000-HC Cont- owners, all
+20101200-HC Escalation
+20101999-HC Cont -Owner 4
+20301995-Restoration Exp
+20301996-Asbestos Abatement
+20501000-1 ATI Emergency Recon
+20501000-1 General Expense
+20501000-1 General Require, al
+20501000-1 General Require, all
+20501000-Gen Requirements
+20501000-General Cond-Exp
+20501000-General Require
+20501000-General Require| all
+20501100-1 General Req.-LHI
+20501100-LHI Pre-bid Estimate
+20501300-1 Admin Requirements
+20501300-1 General Req.-BM
+20501300-NCCO NONPLIC Project Costs
+20501400-1 General Cleaning-BMR
+20501526-Parking Lot Improvement
+20501526-Parking Lot Improvements
+20501575-1 Hazmat/Asbestos Abat
+20501575-1 Remediation-BMR
+20501575-Asbestos Abatement labor
+20501575-Hazmat/Asbestos Abat
+20501800-1 Facility Operation
+20501800-Ops Loss
+20501850-1 Gen Require Exp
+20502300-2 Pkg Lots/Ext Paving-LI
+20502700-2 Paving
+20502700-Paving/Walks/Curbs
+20502925-Lab Migration
+20502995-2 General Use Exp
+20505100-Struct Bldg Stl Walks Pforms S
+20505500-5 Metal Fabrication
+20505700-Metal and Glass
+20506000-6 Woods/Plastics
+20506000-6 Woods/Plastics, all
+20506000-Woods/Plastics
+20506000-Woods/Plastics, all
+20506100-6 Wood/Plastics-LHI
+20506200-6 Wood/Plastics-BM
+20506995-Woods/Plastics
+20507000-7 Therm/H20Proof
+20507000-7 Therm/H20proof
+20507000-7 Therm/H20proof, all
+20507000-Therm/H20proof, all
+20507000-Therm/H2Oproof
+20507000-Thermal/Moisture Protection
+20507400-Roof/Siding materials
+20507997-Lighting
+20508000-8 Doors/Windows
+20508000-8 Doors/Windows, all
+20508000-Doors
+20508000-Doors/Frames/Hw
+20508000-Doors/Windows
+20508000-Doors/Windows, all
+20508050-8 Doors/Windows-LHI
+20508050-8 L-Doors/Windows
+20508050-Door labor
+20508300-Specialty door materials
+20508400-8 Awnings-ITF
+20508500-9b Wallcovering/Brand-ITF
+20508996-9 Wallcovering/Brand-ITF
+20509050-9 Finish Matl/Methods
+20509300-Tile/Stone/Marble
+20509610-6 Wood/Plastics - Carp
+20509620-7 Thermal/Moisture
+20509700-Wallcovering
+20509997-Wall install labor
+20510000-10 M-Specialties
+20510000-10 Specialties
+20510000-10 Specialties, all
+20510000-Misc. Specialties materials
+20510000-Specialties
+20510000-Specialties, all
+20510000-Specialties-Exp
+20510240-10 Specialties-BM
+20510600-Interior Sign b/Brand-OE
+20510995-Interior Sign/Brand-OE
+20510995-Misc. Specialties labor
+20510999-Cash Safe b/Safe Deposit-TFE
+20511000-BR Glass
+20511020-Cash Safe/Safe Deposit-TFE
+20511020-Vault
+20511020-Vaults
+20511030-Bank Equip & Spec. Const.
+20511030-Night Drop-TFE
+20511680-11 Office Equip/Furn
+20511995-ATM
+20511997-ATM
+20511997-DriveUp Equip-Bank Equip
+20511998-Deal Drawer-Bank Equip
+20511999-Gen Trade Fixtures /Equip-TFE
+20512300-DemountTellLine/Mlwk-TFE
+20512900-Misc. Repairs (Furnitu
+20513010-13 Special Const
+20513010-13 Special Constr
+20513010-13 Special Constr, all
+20513010-Special Constr
+20513010-Special Constr, all
+20513010-Special Constr| all
+20513020-13 L-Special Constr
+20513850-13 Special Constr-BM
+20513850-ATM Surround
+20514000-14 Conveying, all
+20514000-Conveying
+20514000-Conveying, all
+20514000-Network
+20515000 -  - CAP - SpendApp '95.
+20515050-15 Mech Matl/Methods
+20515200-15 Sump Pumps-BBM
+20515400-13 Special Constr
+20515800-15 Air Distribution
+20515950-15 Test/Balancing
+20516200-Generator
+20516300-16 Trans/Distribution
+20516300-UPS System/Battery
+20516400-16 Low-Voltage Cable
+20516400-Low-Voltage Distribution
+20516500-16 Lighting
+20516500-Lighting
+20516800-Sound Masking Sys-OE
+20516900-16 Lifesafety
+20516900-JA1280000-Electronic Safety &
+20516900-Lifesafety
+20516900-Safety
+20516995-16 Gen Elec Siemens
+20516995-16 General Elec
+2070-00 - Tenant Reimbursement - TI
+2070-00 - Total Project Budget - FDIC Floors 11, 12 &13
+217
+225
+233
+235
+238
+2x2 Brookhaven B Spec Modern Farm House - unit 1538
+2x2 Brookhaven Upgrade Cozy Classic - unit 1525
+2x2 Hillsborough - Upgrade Modern Farmhouse - unit 438
+2x2 Hillsborough B spec Cozy - Unit 435
+30035300-Door Hardware/Keyways
+30100996-Locks & Equip. Repairs
+30101000-Furn & Fixtures Exp
+30101995-Misc Capital - L
+30101995-Night Depository
+30101995-Safes
+30101996-Merchandising
+30101997-Bandit Barrier
+30101998-Applicances
+30101999-Safe Deposit Box
+30103995-Charis
+30103996-Credenza
+30103997-Lateral File Cabinet
+30103998-Bank Equip - L
+30103998-Conference Table
+30103999-Workstation
+30105000-Systems Furn-Exp
+30105100-Other Furn & Fixture Exp
+30105100-Storage
+30105300-ATM Machine
+30105995-IT Cable/InfraStruct/Eng - O
+30105995-Other Furn/Equip Expense
+30105996-Other b Furn/Equip Expense
+30201000-Closing-Relo-Consolidate
+30301000-Tech/Comm
+30301000-Tech/Comm, all
+30301995-16 Software Custom
+30301995-IT Systems
+30303996-Network Hardware
+30306100-16 Comm DataCbl/Wire
+30306100-Comm- Data Cable/Wire
+30306200-LHO-Comm- Data Cable/Wire
+312
+316
+333
+3D Images and Renders
+3D Renderings
+3D Scan
+3d scan
+4 - LHOL IMPR INTERNAL
+4-Digital Technology
+40101000-Design-Eng-Mgmt
+40101996-Outside Services
+40301000-A & E labor
+40301000-Design
+40301500-Arch- Design
+40301500-JA2003000-A&E Design
+40304000-MEP
+40304000-MEP-Exp
+40306000-Design/AE Costs
+40306150-Cons- Curtainwall/Encl
+40306250-Cons- Filing
+40306300-Cons- Food service
+40306425-Cons- Lighting
+40306625-Cons- Voice/Data/AV
+40306626-Information Tech Cons
+40306775-Cons- Other
+40306776-Cons- Operational Plan
+40306776-LHO-Cons- Other
+40401000-PM Time - Leased
+40401000-PM Time-Leased
+40401000-Proj Mgmnt Time-EXP
+40401000-Proj Mgmnt Time-Lease
+40401000-Proj Mgmnt Time-Leased
+40401000-Proj Mgmnt Time-New Branch
+40401000-Proj Mngmt - Others Exp
+40401995-CS Project Manager
+40401995-Other Project Consulting
+40401995-Program Management
+40401995-Project Admin/Consulting
+40401995-Project Mgmt � Duke
+40401995-Project/Program Mgr 1
+40401996-CRE Project Expense
+40401996-Proj Mgmnt Time-ATM
+40401996-Project Admin/Cons REIMB
+40402000-Variable Project Manager
+40501000-PM Time - Owned
+40501000-Proj Mgmnt Time-Interior Owned
+40501000-Proj Mgmnt Time-Owned
+40501000-Project Mgmnt-EXP
+40501100-PM Time - New
+40501100-Proj Mgmnt Time-New
+40501100-Proj Mgmnt Time-NewBuild Owned
+40501996-Meals & Travel
+40501999-Other Occupancy Expense
+40602000-Harris Internal Costs
+40602000-JA2009000-Miscellaneous
+40602000-Owners Internal, all
+40602995-4 - LHOL IMPR INTERNAL
+40603000-Reimbursed by Others
+40603995-Proj Mngmt Reimb - L
+40603996-CN Proj Mngmt Reimb Exp - O
+40603997-CN Proj Mngmt Reimb Exp - GRI
+40603999-12 - BLDG MAJOR INFRASTR
+40605000-Tax
+40605000-Taxes
+40605000-Taxes, all
+40605000-Taxes| all
+40605200-Canada only - GST TAX
+40605995-M-Taxes
+40605995-Taxes
+40605995-Taxes 1
+40605995-Taxes Exp
+40605996-L-Taxes
+40605996-Tax-GST
+40605997-Tax-PST
+40605998-Tax-QST
+40605999-Canada only - ON HST TAX
+416
+431
+4th FL break area table
+4th Flr - Curtains & Tracks
+4th Flr - Digital Clock System
+4th Flr - IT Equip/Software
+4x1000
+50101000-Leasing- Commissions
+50201800-Mktg- Travel/Entertain
+516
+518
+60402000-Lease T.I. Credit
+60k sf Warehouse
+... and 2289 more

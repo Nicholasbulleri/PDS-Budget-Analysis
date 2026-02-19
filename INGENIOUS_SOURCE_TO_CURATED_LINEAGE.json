@@ -1,0 +1,223 @@
+{
+  "source_system": "edp_sourcesystem.ingenious",
+  "target_schema": "work_dynamics.curated",
+  "total_curated_tables": 42,
+  "lineage_map": {
+    "alternatebusinessunit": {
+      "curated_table": "alternatebusinessunit",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "answer": {
+      "curated_table": "answer",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "budget_projects": {
+      "curated_table": "budget_projects",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "budgetchange": {
+      "curated_table": "budgetchange",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "budgetdetail": {
+      "curated_table": "budgetdetail",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "businessunit": {
+      "curated_table": "businessunit",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "businessunitcategory": {
+      "curated_table": "businessunitcategory",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "businessunitsmasterproperty": {
+      "curated_table": "businessunitsmasterproperty",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "businessunittag": {
+      "curated_table": "businessunittag",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "commitment": {
+      "curated_table": "commitment",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "commitmentchanges": {
+      "curated_table": "commitmentchanges",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "companybusinessunit": {
+      "curated_table": "companybusinessunit",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "directorycontactprojectlnk": {
+      "curated_table": "directorycontactprojectlnk",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "dssf_report_project": {
+      "curated_table": "dssf_report_project",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "game_risk_register": {
+      "curated_table": "game_risk_register",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "generictask": {
+      "curated_table": "generictask",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "historicalsnapshot_leaseadmingloballaborallocations": {
+      "curated_table": "historicalsnapshot_leaseadmingloballaborallocations",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "inspection": {
+      "curated_table": "inspection",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "inspectionmembers": {
+      "curated_table": "inspectionmembers",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "inspectiontemplates": {
+      "curated_table": "inspectiontemplates",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "leaseadmingloballaborallocations": {
+      "curated_table": "leaseadmingloballaborallocations",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "leaseadminusers": {
+      "curated_table": "leaseadminusers",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "locations": {
+      "curated_table": "locations",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "milestone": {
+      "curated_table": "milestone",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "op_users": {
+      "curated_table": "op_users",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "opportunity_projects": {
+      "curated_table": "opportunity_projects",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "program": {
+      "curated_table": "program",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "project": {
+      "curated_table": "project",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "project_history": {
+      "curated_table": "project_history",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "project_snapshot": {
+      "curated_table": "project_snapshot",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "projectadditionalcustomfield": {
+      "curated_table": "projectadditionalcustomfield",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "projectdetails": {
+      "curated_table": "projectdetails",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "projectsites": {
+      "curated_table": "projectsites",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "projectstatsindicator": {
+      "curated_table": "projectstatsindicator",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "punchitemmember": {
+      "curated_table": "punchitemmember",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "punchlistitem": {
+      "curated_table": "punchlistitem",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "relatedworkitem": {
+      "curated_table": "relatedworkitem",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "risk": {
+      "curated_table": "risk",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "riskcontact": {
+      "curated_table": "riskcontact",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "riskmembers": {
+      "curated_table": "riskmembers",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "users": {
+      "curated_table": "users",
+      "upstream_source_tables": [],
+      "source_method": []
+    },
+    "workitem": {
+      "curated_table": "workitem",
+      "upstream_source_tables": [],
+      "source_method": []
+    }
+  },
+  "summary": {
+    "tables_with_sources": 0,
+    "total_source_links": 0,
+    "unique_source_tables": 0
+  },
+  "lineage_by_source": {}
+}

@@ -1,0 +1,32 @@
+{
+  "user_name": "Nicholas.Bulleri@jll.com",
+  "name_variations": [
+    "NICHOLAS.BULLERI@JLL.COM",
+    "nicholas",
+    "bulleri@jll",
+    "Nicholas.Bulleri@jll.com",
+    "Nicholas.Bulleri@jll",
+    "nick",
+    "Bulleri@jll",
+    "Nicholas",
+    "Nicholas Bulleri@jll",
+    "nicholas.bulleri@jll.com",
+    "bulleri",
+    "nicholas bulleri@jll"
+  ],
+  "date_range": {
+    "start": "2026-01-06T00:00:00",
+    "end": "2026-01-07T23:59:59.999999"
+  },
+  "meetings": [],
+  "action_items": [],
+  "chat_mentions": [],
+  "transcript_files": [],
+  "summary": {
+    "total_meetings_in_range": 0,
+    "meetings_with_ai_recaps": 0,
+    "meetings_with_transcripts": 0,
+    "total_action_items": 0,
+    "total_chat_mentions": 0
+  }
+}

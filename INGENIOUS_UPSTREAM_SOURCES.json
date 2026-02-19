@@ -1,0 +1,512 @@
+{
+  "total_views": 25,
+  "views_analyzed": [
+    "vw_ingenious_answer",
+    "vw_ingenious_budgetchange",
+    "vw_ingenious_budgetdetail",
+    "vw_ingenious_businessunit",
+    "vw_ingenious_commitment",
+    "vw_ingenious_commitmentchanges",
+    "vw_ingenious_directorycontactprojectlnk",
+    "vw_ingenious_generictask",
+    "vw_ingenious_inspection",
+    "vw_ingenious_inspectionmembers",
+    "vw_ingenious_inspectiontemplates",
+    "vw_ingenious_locations",
+    "vw_ingenious_milestone",
+    "vw_ingenious_program",
+    "vw_ingenious_project",
+    "vw_ingenious_projectadditionalcustomfield",
+    "vw_ingenious_projectsites",
+    "vw_ingenious_projectstatsindicator",
+    "vw_ingenious_punchitemmember",
+    "vw_ingenious_punchlistitem",
+    "vw_ingenious_risk",
+    "vw_ingenious_riskcontact",
+    "vw_ingenious_riskmembers",
+    "vw_ingenious_users",
+    "vw_ingenious_workitem"
+  ],
+  "upstream_sources": {
+    "vw_ingenious_answer": {
+      "view_name": "vw_ingenious_answer",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.answer"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_budgetchange": {
+      "view_name": "vw_ingenious_budgetchange",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.budgetchange"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_budgetdetail": {
+      "view_name": "vw_ingenious_budgetdetail",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.budgetdetail"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_businessunit": {
+      "view_name": "vw_ingenious_businessunit",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.businessunit"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_commitment": {
+      "view_name": "vw_ingenious_commitment",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.commitment"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_commitmentchanges": {
+      "view_name": "vw_ingenious_commitmentchanges",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.commitmentchanges"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_directorycontactprojectlnk": {
+      "view_name": "vw_ingenious_directorycontactprojectlnk",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.directorycontactprojectlnk"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_generictask": {
+      "view_name": "vw_ingenious_generictask",
+      "upstream_tables": [],
+      "upstream_schemas": [],
+      "upstream_catalogs": [],
+      "source_method": []
+    },
+    "vw_ingenious_inspection": {
+      "view_name": "vw_ingenious_inspection",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.inspection"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_inspectionmembers": {
+      "view_name": "vw_ingenious_inspectionmembers",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.inspectionmembers"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_inspectiontemplates": {
+      "view_name": "vw_ingenious_inspectiontemplates",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.inspectiontemplates"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_locations": {
+      "view_name": "vw_ingenious_locations",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.locations"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_milestone": {
+      "view_name": "vw_ingenious_milestone",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.milestone"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_program": {
+      "view_name": "vw_ingenious_program",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.program"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_project": {
+      "view_name": "vw_ingenious_project",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.project"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_projectadditionalcustomfield": {
+      "view_name": "vw_ingenious_projectadditionalcustomfield",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.projectadditionalcustomfield"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_projectsites": {
+      "view_name": "vw_ingenious_projectsites",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.projectsites"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_projectstatsindicator": {
+      "view_name": "vw_ingenious_projectstatsindicator",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.projectstatsindicator"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_punchitemmember": {
+      "view_name": "vw_ingenious_punchitemmember",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.punchitemmember"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_punchlistitem": {
+      "view_name": "vw_ingenious_punchlistitem",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.punchlistitem"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_risk": {
+      "view_name": "vw_ingenious_risk",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.risk"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_riskcontact": {
+      "view_name": "vw_ingenious_riskcontact",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.riskcontact"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_riskmembers": {
+      "view_name": "vw_ingenious_riskmembers",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.riskmembers"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_users": {
+      "view_name": "vw_ingenious_users",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.users"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    },
+    "vw_ingenious_workitem": {
+      "view_name": "vw_ingenious_workitem",
+      "upstream_tables": [
+        "work_dynamics.curated",
+        "work_dynamics.curated.workitem"
+      ],
+      "upstream_schemas": [
+        "curated",
+        "work_dynamics"
+      ],
+      "upstream_catalogs": [
+        "work_dynamics"
+      ],
+      "source_method": [
+        "view_definition_parsing"
+      ]
+    }
+  },
+  "summary": {
+    "total_unique_sources": 25,
+    "unique_schemas": 2,
+    "unique_catalogs": 1,
+    "views_with_sources": 24
+  },
+  "sources_by_schema": {
+    "work_dynamics": [
+      "work_dynamics.curated"
+    ],
+    "curated": [
+      "work_dynamics.curated.answer",
+      "work_dynamics.curated.budgetchange",
+      "work_dynamics.curated.budgetdetail",
+      "work_dynamics.curated.businessunit",
+      "work_dynamics.curated.commitment",
+      "work_dynamics.curated.commitmentchanges",
+      "work_dynamics.curated.directorycontactprojectlnk",
+      "work_dynamics.curated.inspection",
+      "work_dynamics.curated.inspectionmembers",
+      "work_dynamics.curated.inspectiontemplates",
+      "work_dynamics.curated.locations",
+      "work_dynamics.curated.milestone",
+      "work_dynamics.curated.program",
+      "work_dynamics.curated.project",
+      "work_dynamics.curated.projectadditionalcustomfield",
+      "work_dynamics.curated.projectsites",
+      "work_dynamics.curated.projectstatsindicator",
+      "work_dynamics.curated.punchitemmember",
+      "work_dynamics.curated.punchlistitem",
+      "work_dynamics.curated.risk",
+      "work_dynamics.curated.riskcontact",
+      "work_dynamics.curated.riskmembers",
+      "work_dynamics.curated.users",
+      "work_dynamics.curated.workitem"
+    ]
+  },
+  "sources_by_catalog": {
+    "work_dynamics": [
+      "work_dynamics.curated.answer",
+      "work_dynamics.curated.budgetchange",
+      "work_dynamics.curated.budgetdetail",
+      "work_dynamics.curated.businessunit",
+      "work_dynamics.curated.commitment",
+      "work_dynamics.curated.commitmentchanges",
+      "work_dynamics.curated.directorycontactprojectlnk",
+      "work_dynamics.curated.inspection",
+      "work_dynamics.curated.inspectionmembers",
+      "work_dynamics.curated.inspectiontemplates",
+      "work_dynamics.curated.locations",
+      "work_dynamics.curated.milestone",
+      "work_dynamics.curated.program",
+      "work_dynamics.curated.project",
+      "work_dynamics.curated.projectadditionalcustomfield",
+      "work_dynamics.curated.projectsites",
+      "work_dynamics.curated.projectstatsindicator",
+      "work_dynamics.curated.punchitemmember",
+      "work_dynamics.curated.punchlistitem",
+      "work_dynamics.curated.risk",
+      "work_dynamics.curated.riskcontact",
+      "work_dynamics.curated.riskmembers",
+      "work_dynamics.curated.users",
+      "work_dynamics.curated.workitem"
+    ]
+  }
+}

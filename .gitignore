@@ -1,0 +1,36 @@
+# Environment variables
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated query output files (large, re-creatable by running the scripts)
+budget_query_results_*.csv
+budget_query_results_*.xlsx
+budget_query_results_curated_closed.csv
+
+# Temporary Excel lock files
+~$*.xlsx
+~$*.xls
+
+# EDP folder (internal notes)
+EDP/
+
