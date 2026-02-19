@@ -1,9 +1,0 @@
-# Requirements for API import script
-requests>=2.31.0
-python-dotenv>=1.0.0
-
-# Optional: For database storage
-# databricks-sql-connector
-# azure-identity
-
-
