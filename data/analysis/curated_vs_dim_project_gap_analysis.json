@@ -1,0 +1,519 @@
+{
+  "confirmed_mappings": {
+    "projectname": [
+      "name",
+      "exact",
+      "99%"
+    ],
+    "city": [
+      "city",
+      "exact",
+      "98%"
+    ],
+    "country": [
+      "country",
+      "exact",
+      "99%"
+    ],
+    "phasetext": [
+      "phase",
+      "exact",
+      "100%"
+    ],
+    "state": [
+      "clarizen_status / ingenious_status",
+      "exact",
+      "100%"
+    ],
+    "description": [
+      "description",
+      "exact",
+      "100%"
+    ],
+    "currencytype": [
+      "managed_spend_base_currency",
+      "exact",
+      "100%"
+    ],
+    "startdatetime": [
+      "start_date",
+      "date-truncated",
+      "96%"
+    ],
+    "duedatetime": [
+      "end_date",
+      "date-truncated",
+      "67%"
+    ],
+    "actualenddatetime": [
+      "end_date",
+      "date-truncated",
+      "100%"
+    ],
+    "actualstartdatetime": [
+      "start_date",
+      "date-truncated",
+      "100%"
+    ],
+    "projectmanageruseridentifer": [
+      "project_manager_id",
+      "id-match",
+      "~75%"
+    ],
+    "teamleaduseridentifer": [
+      "team_lead_id",
+      "id-match",
+      "~79%"
+    ],
+    "projectservicetypename": [
+      "service_type",
+      "exact",
+      "98%"
+    ],
+    "projectjllroletext": [
+      "delivery_model",
+      "partial",
+      "88%"
+    ],
+    "customertyptext": [
+      "customer_type",
+      "exact",
+      "98%"
+    ],
+    "fitouttype": [
+      "fitout_type",
+      "exact",
+      "100%"
+    ],
+    "totalapprovedbudgetamount": [
+      "managed_spend",
+      "exact",
+      "100%"
+    ],
+    "projectdocumenturltext": [
+      "document_folder_url",
+      "exact",
+      "100%"
+    ],
+    "locationname": [
+      "address",
+      "exact",
+      "88%"
+    ],
+    "projecttypename": [
+      "project_type",
+      "ref-table-resolved",
+      "65%"
+    ],
+    "jllprojecttypetext": [
+      "project_type",
+      "ref-table-resolved",
+      "65%"
+    ],
+    "grossarea": [
+      "managed_sf",
+      "one-of-3-areas",
+      "70%"
+    ],
+    "rentablearea": [
+      "managed_sf",
+      "one-of-3-areas",
+      "85%"
+    ],
+    "usablearea": [
+      "managed_sf",
+      "one-of-3-areas",
+      "83%"
+    ],
+    "workitemidentifier": [
+      "code (via dim_project_clarizen)",
+      "indirect",
+      "~100%"
+    ],
+    "migratedprojectid": [
+      "code",
+      "partial",
+      "99%"
+    ],
+    "domainname": [
+      "ingenious_domain",
+      "exact",
+      "99.8%"
+    ],
+    "sector": [
+      "asset_type",
+      "partial",
+      "55%"
+    ],
+    "customid": [
+      "code (Ingenious)",
+      "exact",
+      "93%"
+    ]
+  },
+  "concept_mappings": {
+    "regionname": {
+      "dim_field": "market_id",
+      "method": "text\u2192code (AM \u2192 AM0001)",
+      "note": "Clarizen region text maps to dim market code"
+    },
+    "majormarketname": {
+      "dim_field": "market_id",
+      "method": "text\u2192code (Northeast \u2192 AM3402)",
+      "note": "Major market name mapped to market code via ref table"
+    },
+    "minormarketname": {
+      "dim_field": "market_id",
+      "method": "text\u2192code",
+      "note": "Minor market mapped into market_id"
+    },
+    "jllbusinessline": {
+      "dim_field": "business_line_id",
+      "method": "text\u2192code (PDS Dedicated \u2192 350007)",
+      "note": "Business line name mapped to ID via ref table"
+    },
+    "companyidentifier": {
+      "dim_field": "customer_name",
+      "method": "id\u2192name (URI \u2192 company name)",
+      "note": "Company URI resolved to name"
+    },
+    "propertyidentifier": {
+      "dim_field": "ovcid / address",
+      "method": "id\u2192location",
+      "note": "Property ID used to resolve location data"
+    },
+    "sourceprojectidentifier": {
+      "dim_field": "code",
+      "method": "source-specific ID",
+      "note": "Source system project ID"
+    },
+    "sourceprojectid": {
+      "dim_field": "(used in join only)",
+      "method": "join key",
+      "note": "Used to link curated\u2192dim, not stored"
+    }
+  },
+  "metadata_fields": [
+    "id",
+    "sourcesystem",
+    "isdeleted",
+    "udp_create_ts",
+    "udp_update_ts",
+    "udp_hash",
+    "udp_delete_flag",
+    "sourcemodifiedby",
+    "sourcelastupdateddatetime",
+    "sourcecreatedby",
+    "sourcecreateddatetime",
+    "weburltext",
+    "projecturl",
+    "externalruntimeidentifier",
+    "spendingintegrationtext",
+    "spendprojectintegrationflag",
+    "projectstatusmanuallysetflag",
+    "statusid",
+    "health",
+    "scheduledhealth",
+    "tags",
+    "customattributes"
+  ],
+  "financial_detail_fields": [
+    "pendingcommitmentsamount",
+    "projectedtotalcommitmentsamount",
+    "varianceofbudgettocostamount",
+    "approvedcommitments",
+    "totalprojectedbudget",
+    "totalpendinginvoices",
+    "totalinvoices",
+    "totalapprovedinvoicesamount",
+    "remainingbalancetoinvoice",
+    "approvedchangesandtransfers",
+    "pendingchangesandtransfers",
+    "additionalforecastedcosts",
+    "anticipatedcosttocomplete",
+    "originalbudgetamount",
+    "costperarea",
+    "totalestimatedamount",
+    "monthsbeforefinancialstartnumber",
+    "monthsafterfinancialendnumber",
+    "totalpaidvalue",
+    "currentbudget",
+    "materialstoredoffsite",
+    "grosstotalcompletedandstoredamount",
+    "grosstotalcompletedandstoredpercent",
+    "grossbalancetocomplete",
+    "materialstoredretentionamount",
+    "materialstoredretentionpercent",
+    "totalretentionamount",
+    "totalretentionpercent",
+    "varianceofbudgetamount",
+    "currentretentionpercent",
+    "nettotalcompletedandstoredpercentvalue",
+    "remainingbalancetoinvoicepercent",
+    "paidpercent",
+    "unpaidamount",
+    "executedchangeorders",
+    "pendingchangeorders",
+    "unallocatedfunds",
+    "grosspreviousapplicationsamount",
+    "grosscurrentapplicationsamount",
+    "previousretentionamount",
+    "currentretentionamount",
+    "previousretentionpercent",
+    "approvedchangesamount",
+    "pendingchangesamount",
+    "approvedtransfersamount",
+    "pendingtransfersamount",
+    "originaltotalbudgetamount",
+    "pendingbudgetamount",
+    "totaluncommitmentsamount",
+    "originalcommitmentsamount"
+  ],
+  "true_gaps": {
+    "schedulestatus": {
+      "description": "Schedule health status (Green/Yellow/Red)",
+      "clarizen_pct": 96.3,
+      "ingenious_pct": 100.0,
+      "category": "Status & Progress",
+      "impact": "HIGH - Critical for project health dashboards and reporting"
+    },
+    "projectbudgetstatus": {
+      "description": "Budget health status (On Track, At Risk, etc.)",
+      "clarizen_pct": 96.3,
+      "ingenious_pct": 39.7,
+      "category": "Status & Progress",
+      "impact": "HIGH - Critical for financial health monitoring"
+    },
+    "percentcompleted": {
+      "description": "Percent completion of project (0-100)",
+      "clarizen_pct": 96.3,
+      "ingenious_pct": 0,
+      "category": "Status & Progress",
+      "impact": "HIGH - Key KPI for project tracking and portfolio views"
+    },
+    "risklevelcode": {
+      "description": "Risk level classification (Low, Medium-High, High, etc.)",
+      "clarizen_pct": 35.4,
+      "ingenious_pct": 0,
+      "category": "Status & Progress",
+      "impact": "MEDIUM - Useful for risk-based filtering"
+    },
+    "risktext": {
+      "description": "Risk text (Ingenious)",
+      "clarizen_pct": 0,
+      "ingenious_pct": 98.4,
+      "category": "Status & Progress",
+      "impact": "MEDIUM - Ingenious-specific risk field"
+    },
+    "baselinestartdatetime": {
+      "description": "Baseline start date (original planned start)",
+      "clarizen_pct": 30.0,
+      "ingenious_pct": 42.1,
+      "category": "Dates & Duration",
+      "impact": "MEDIUM - Needed for schedule variance analysis"
+    },
+    "baselineduedatetime": {
+      "description": "Baseline end date (original planned end)",
+      "clarizen_pct": 30.0,
+      "ingenious_pct": 42.2,
+      "category": "Dates & Duration",
+      "impact": "MEDIUM - Needed for schedule variance analysis"
+    },
+    "duration": {
+      "description": "Project duration",
+      "clarizen_pct": 96.3,
+      "ingenious_pct": 41.5,
+      "category": "Dates & Duration",
+      "impact": "LOW - Derivable from start/end dates"
+    },
+    "constructionenddatetime": {
+      "description": "Construction end date",
+      "clarizen_pct": 27.9,
+      "ingenious_pct": 0,
+      "category": "Dates & Duration",
+      "impact": "LOW - Specific to construction projects"
+    },
+    "projectinitiationdatetime": {
+      "description": "Project initiation date",
+      "clarizen_pct": 19.0,
+      "ingenious_pct": 0,
+      "category": "Dates & Duration",
+      "impact": "LOW - Useful for lead time analysis"
+    },
+    "stagetext": {
+      "description": "Project stage (Project Delivery, Pre-construction, Design, etc.)",
+      "clarizen_pct": 55.7,
+      "ingenious_pct": 0,
+      "category": "Project Context",
+      "impact": "HIGH - dim.stage only from DSSF; Clarizen stage data is lost"
+    },
+    "planningstatustext": {
+      "description": "Planning status (Active, Closed, Deferred, etc.)",
+      "clarizen_pct": 54.5,
+      "ingenious_pct": 0,
+      "category": "Project Context",
+      "impact": "MEDIUM - Additional status dimension"
+    },
+    "templateworktypetext": {
+      "description": "Clarizen template name (identifies workflow template used)",
+      "clarizen_pct": 95.9,
+      "ingenious_pct": 0,
+      "category": "Project Context",
+      "impact": "MEDIUM - Encodes client+region+worktype in template name"
+    },
+    "templatetext": {
+      "description": "Clarizen project template",
+      "clarizen_pct": 82.4,
+      "ingenious_pct": 0,
+      "category": "Project Context",
+      "impact": "MEDIUM - Similar to templateworktypetext"
+    },
+    "billableindicator": {
+      "description": "Whether the project is billable (true/false)",
+      "clarizen_pct": 96.3,
+      "ingenious_pct": 0,
+      "category": "Project Context",
+      "impact": "HIGH - Key for financial categorization"
+    },
+    "unitofmeasure": {
+      "description": "Unit of measure for area fields (Square Feet, Square Meters, etc.)",
+      "clarizen_pct": 56.6,
+      "ingenious_pct": 100.0,
+      "category": "Project Context",
+      "impact": "HIGH - Without UOM, managed_sf values are ambiguous"
+    },
+    "overallsummary": {
+      "description": "Project overall summary text",
+      "clarizen_pct": 26.3,
+      "ingenious_pct": 0,
+      "category": "Text & Notes",
+      "impact": "LOW - Free text, mainly for manual reference"
+    },
+    "projectcommenttext": {
+      "description": "Project comment text",
+      "clarizen_pct": 25.2,
+      "ingenious_pct": 0,
+      "category": "Text & Notes",
+      "impact": "LOW - Free text comments"
+    },
+    "coordinatornameuseridentifer": {
+      "description": "Project coordinator user ID",
+      "clarizen_pct": 38.7,
+      "ingenious_pct": 11.9,
+      "category": "People & Organization",
+      "impact": "MEDIUM - Third team role not captured"
+    },
+    "customerprojectnumber": {
+      "description": "Customer's own project number",
+      "clarizen_pct": 19.8,
+      "ingenious_pct": 0,
+      "category": "People & Organization",
+      "impact": "MEDIUM - Useful for client cross-referencing"
+    },
+    "customerprojectmanagername": {
+      "description": "Customer's project manager name",
+      "clarizen_pct": 15.4,
+      "ingenious_pct": 0,
+      "category": "People & Organization",
+      "impact": "LOW - Customer-side PM"
+    },
+    "customerbusinessunitidentifier": {
+      "description": "Customer's business unit",
+      "clarizen_pct": 21.9,
+      "ingenious_pct": 0,
+      "category": "People & Organization",
+      "impact": "LOW - Customer organizational data"
+    },
+    "programidentifier": {
+      "description": "Program ID (grouping of related projects)",
+      "clarizen_pct": 17.4,
+      "ingenious_pct": 23.8,
+      "category": "People & Organization",
+      "impact": "MEDIUM - Important for program-level reporting"
+    },
+    "parentworkitemidentifier": {
+      "description": "Parent project/work item ID",
+      "clarizen_pct": 17.4,
+      "ingenious_pct": 0,
+      "category": "People & Organization",
+      "impact": "MEDIUM - Project hierarchy relationships"
+    },
+    "leasedofownedtext": {
+      "description": "Whether property is leased or owned",
+      "clarizen_pct": 0,
+      "ingenious_pct": 19.4,
+      "category": "Project Context",
+      "impact": "LOW - Property context"
+    },
+    "contactidentifier": {
+      "description": "Primary contact ID (Ingenious)",
+      "clarizen_pct": 0,
+      "ingenious_pct": 58.9,
+      "category": "People & Organization",
+      "impact": "MEDIUM - Primary project contact"
+    },
+    "elementscorenumber": {
+      "description": "Element score (capital planning)",
+      "clarizen_pct": 43.7,
+      "ingenious_pct": 0,
+      "category": "Scoring & Priority",
+      "impact": "LOW - Capital planning score"
+    },
+    "projectpriorityscorenumber": {
+      "description": "Project priority score",
+      "clarizen_pct": 96.3,
+      "ingenious_pct": 0,
+      "category": "Scoring & Priority",
+      "impact": "MEDIUM - Project prioritization metric"
+    },
+    "plannedyearidentifier": {
+      "description": "Planned execution year",
+      "clarizen_pct": 37.7,
+      "ingenious_pct": 0,
+      "category": "Dates & Duration",
+      "impact": "LOW - Can be derived from start date"
+    }
+  },
+  "summary": {
+    "confirmed_count": 30,
+    "concept_count": 8,
+    "metadata_count": 22,
+    "financial_count": 50,
+    "gap_count": 29,
+    "high_impact_gaps": [
+      "schedulestatus",
+      "projectbudgetstatus",
+      "percentcompleted",
+      "stagetext",
+      "billableindicator",
+      "unitofmeasure"
+    ],
+    "medium_impact_gaps": [
+      "risklevelcode",
+      "risktext",
+      "baselinestartdatetime",
+      "baselineduedatetime",
+      "planningstatustext",
+      "templateworktypetext",
+      "templatetext",
+      "coordinatornameuseridentifer",
+      "customerprojectnumber",
+      "programidentifier",
+      "parentworkitemidentifier",
+      "contactidentifier",
+      "projectpriorityscorenumber"
+    ],
+    "low_impact_gaps": [
+      "duration",
+      "constructionenddatetime",
+      "projectinitiationdatetime",
+      "overallsummary",
+      "projectcommenttext",
+      "customerprojectmanagername",
+      "customerbusinessunitidentifier",
+      "leasedofownedtext",
+      "elementscorenumber",
+      "plannedyearidentifier"
+    ]
+  }
+}

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dim/Fact Model — work_dynamics.ds_pds_global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0f14;--s1:#13161d;--s2:#1a1e27;--s3:#222730;--bd:#2a3040;
+  --txt:#e8eaf0;--muted:#8891a5;
+  --blue:#4ea8de;--teal:#38bfa7;--amber:#e5a84b;--rose:#e06080;--violet:#9b7bd4;--lime:#8bc34a;
+  --dssf:var(--blue);--ingenious:var(--teal);--clarizen:var(--amber);--finance:var(--rose);--projectapp:var(--violet);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:'Instrument Sans',system-ui,sans-serif;font-size:15px;line-height:1.55;min-height:100vh;position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;margin:0 0 .5rem}
+h1{font-size:clamp(1.75rem,4vw,2.35rem);letter-spacing:-.02em}
+h2{font-size:1.35rem;color:var(--txt);margin-top:2rem;margin-bottom:.75rem;border-bottom:1px solid var(--bd);padding-bottom:.4rem}
+h3{font-size:1.05rem;color:var(--muted);margin-top:1.5rem;margin-bottom:.65rem;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em}
+.sub{color:var(--muted);font-size:.95rem;max-width:52rem;margin-bottom:1.25rem}
+code,.mono{font-family:'IBM Plex Mono',monospace;font-size:.82rem}
+.wrap{max-width:1180px;margin:0 auto;padding:1.25rem 1.25rem 3rem;position:relative;z-index:1}
+.tabs{display:flex;flex-wrap:wrap;gap:.35rem;position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(12,15,20,.97) 70%,transparent);padding:.75rem 0 1rem;margin:0 -1.25rem;padding-left:1.25rem;padding-right:1.25rem;border-bottom:1px solid var(--bd);backdrop-filter:blur(8px)}
+.tabs button{
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;
+  padding:.55rem .85rem;border:1px solid var(--bd);background:var(--s1);color:var(--muted);cursor:pointer;border-radius:4px;transition:background .2s,color .2s,border-color .2s,transform .15s
+}
+.tabs button:hover{color:var(--txt);border-color:var(--blue);background:var(--s2)}
+.tabs button.active{color:var(--txt);border-color:var(--teal);background:var(--s3);box-shadow:0 0 0 1px rgba(56,191,167,.25)}
+.tab-panel{display:none;animation:fadeIn .45s ease backwards}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.stats{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.25rem 0 1.5rem}
+.stat{background:var(--s1);border:1px solid var(--bd);border-radius:6px;padding:.65rem .9rem;min-width:7rem}
+.stat b{font-size:1.15rem;display:block;font-family:'IBM Plex Mono',monospace;color:var(--teal)}
+.stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.arch{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:1rem 1.15rem;margin:1rem 0;font-size:.92rem;color:var(--muted)}
+.arch strong{color:var(--txt)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.75rem}
+.card{
+  background:var(--s1);border:1px solid var(--bd);border-radius:8px;padding:.85rem 1rem;
+  animation:fadeIn .5s ease backwards
+}
+.card:nth-child(1){animation-delay:.03s}.card:nth-child(2){animation-delay:.06s}.card:nth-child(3){animation-delay:.09s}
+.card:nth-child(4){animation-delay:.12s}.card:nth-child(5){animation-delay:.15s}.card:nth-child(6){animation-delay:.18s}
+.card h4{margin:0 0 .35rem;font-size:.95rem;display:flex;align-items:center;gap:.45rem;font-family:'IBM Plex Mono',monospace;font-weight:500}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.badge{display:inline-block;font-size:.65rem;padding:.15rem .4rem;border-radius:3px;background:var(--s3);color:var(--muted);margin-left:auto}
+.card p{margin:.35rem 0 0;font-size:.8rem;color:var(--muted);line-height:1.45}
+.cols{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem}
+.tag{font-size:.65rem;padding:.12rem .35rem;border-radius:3px;border:1px solid var(--bd);color:var(--muted)}
+.tag.pk{border-color:var(--blue);color:var(--blue);background:rgba(78,168,222,.08)}
+.tag.fk{border-color:var(--amber);color:var(--amber);background:rgba(229,168,75,.08)}
+.flow{display:grid;gap:.6rem}
+.layer{background:var(--s1);border-left:3px solid var(--teal);padding:.75rem 1rem;border-radius:0 8px 8px 0;border:1px solid var(--bd);border-left:3px solid var(--teal)}
+.layer strong{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--blue)}
+.layer p{margin:.35rem 0 0;font-size:.85rem;color:var(--muted)}
+.issue{border-radius:8px;padding:.75rem 1rem;margin:.5rem 0;border:1px solid var(--bd);background:var(--s1)}
+.issue.crit{border-left:3px solid var(--rose)}.issue.warn{border-left:3px solid var(--amber)}
+.issue.info{border-left:3px solid var(--blue)}.issue.enh{border-left:3px solid var(--violet)}
+.issue b{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}
+.table-stats{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.75rem}
+.table-stats th,.table-stats td{padding:.5rem .6rem;text-align:left;border-bottom:1px solid var(--bd)}
+.table-stats th{font-family:'IBM Plex Mono',monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--s1)}
+.table-stats td.mono{font-variant-numeric:tabular-nums}
+.note{font-size:.78rem;color:var(--muted);margin-top:.75rem;padding:.6rem;background:var(--s2);border-radius:6px;border:1px dashed var(--bd)}
+ul.compact{margin:.35rem 0;padding-left:1.1rem;color:var(--muted);font-size:.88rem}
+ul.compact li{margin:.2rem 0}
+a{color:var(--blue)}
+@media(max-width:640px){.stats .stat{min-width:45%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="tabs" role="tablist" aria-label="Dashboard sections">
+<button type="button" class="active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+<button type="button" data-tab="dimensions" role="tab">Dimensions</button>
+<button type="button" data-tab="facts" role="tab">Facts</button>
+<button type="button" data-tab="flow" role="tab">Data Flow</button>
+<button type="button" data-tab="idres" role="tab">ID Resolution</button>
+<button type="button" data-tab="priority" role="tab">Source Priority</button>
+<button type="button" data-tab="issues" role="tab">Issues &amp; Gaps</button>
+<button type="button" data-tab="stats" role="tab">Schema Stats</button>
+<button type="button" data-tab="snapshots" role="tab">Snapshots</button>
+<button type="button" data-tab="concerns" role="tab">Concerns</button>
+<button type="button" data-tab="dimgaps" role="tab">dim_project Gaps</button>
+</nav>
+
+<section id="panel-overview" class="tab-panel active" role="tabpanel">
+<h1>Dim/Fact Model Analysis</h1>
+<p class="sub">Schema Deep Dive — <span class="mono">work_dynamics.ds_pds_global</span> · Catalog verified from <span class="mono">data/ds_pds_global_catalog.json</span></p>
+<div class="stats">
+<div class="stat"><b>407</b><span>Objects</span></div>
+<div class="stat"><b>56</b><span>dim_ tables</span></div>
+<div class="stat"><b>18</b><span>fact_ tables</span></div>
+<div class="stat"><b>13</b><span>id_resolution_</span></div>
+<div class="stat"><b>29</b><span>Snapshots</span></div>
+<div class="stat"><b>140</b><span>vw_ views</span></div>
+<div class="stat"><b>5</b><span>Core sources</span></div>
+</div>
+<p class="arch"><strong>Architecture.</strong> The schema implements a multi-source integration pattern: source-specific project and employee grains are ingested, linked through ID resolution, then unified into conformed dimensions (<span class="mono">dim_project</span>, <span class="mono">dim_employee</span>, …) with <span class="mono">best_pds_source</span> driving field-level precedence. Facts (revenue, labor, surveys) sit on the unified keys to power analytics and ~140 <span class="mono">vw_*</span> reporting views.</p>
+<h2>Primary source systems</h2>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>DSSF <span class="badge">~55K proj</span></h4><p>Salesforce / FinancialForce — CRM-led project truth; feeds DSSF-shaped project dimension.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--ingenious)"></span>Ingenious <span class="badge">~6K proj</span></h4><p>Primary PM tool for active PDS delivery; preferred when status is not <span class="mono">external-pending</span>.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--clarizen)"></span>Clarizen <span class="badge">~248K proj</span></h4><p>Legacy PM breadth; large historical footprint in <span class="mono">dim_project_clarizen</span>.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--finance)"></span>Finance <span class="badge">~1.8M proj</span></h4><p>PeopleSoft / finance ledger alignment; massive project grain in <span class="mono">dim_project_finance</span>.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--projectapp)"></span>ProjectApp <span class="badge">~258K proj</span></h4><p>Retired system; retained for historical continuity and mapping.</p></div>
+</div>
+<h2>Staging &amp; raw layers</h2>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>LightningForce <span class="badge">24 tables</span></h4><p>Raw DSSF / Lightning schema surfaces (<span class="mono">lightningforce__*</span>) in this catalog.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--finance)"></span>Finance__ <span class="badge">26 tables</span></h4><p>Finance staging (<span class="mono">finance__*</span>) — PeopleSoft-aligned extracts.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--clarizen)"></span>Clarizen_ <span class="badge">5 tables</span></h4><p>Clarizen staging (<span class="mono">clarizen_*</span>) for legacy PM linkage.</p></div>
+</div>
+<p class="note">View inventory: <strong>140</strong> objects prefixed <span class="mono">vw_</span>; <strong>146</strong> total SQL objects with <span class="mono">table_type = VIEW</span> (includes <span class="mono">amer_*</span>, <span class="mono">ref_*</span>, etc.).</p>
+</section>
+
+<section id="panel-dimensions" class="tab-panel" role="tabpanel">
+<h1>Dimensions <span style="color:var(--muted);font-size:1rem">(56 tables)</span></h1>
+<p class="sub">Row counts from catalog snapshot. Cards use source-color dots where applicable.</p>
+
+<h3>Core project dimensions</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--teal)"></span>dim_project <span class="badge">2.27M × 68</span></h4><p>Unified project dimension; primary key <span class="mono">id</span> (master project / resolution output).</p>
+<div class="cols"><span class="tag pk">id</span><span class="tag fk">opportunity_id</span><span class="tag">name</span><span class="tag">code</span><span class="tag">phase</span><span class="tag">best_pds_source</span><span class="tag">managed_spend</span></div></div>
+<div class="card"><h4><span class="dot" style="background:var(--ingenious)"></span>dim_project_ingenious <span class="badge">6,289 × 85</span></h4><p>Ingenious-native project attributes.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_project_dssf <span class="badge">55,489 × 75</span></h4><p>DSSF / Salesforce project grain.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--clarizen)"></span>dim_project_clarizen <span class="badge">248,166 × 92</span></h4><p>Clarizen project grain.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--finance)"></span>dim_project_finance <span class="badge">1.77M × 56</span></h4><p>Finance / PS project grain.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--projectapp)"></span>dim_project_projectapp <span class="badge">257,841 × 212</span></h4><p>Retired ProjectApp grain (wide).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--lime)"></span>dim_project_client_sat_base <span class="badge">2.19M × 21</span></h4><p>Client-satellite base for project–client linkage.</p></div>
+</div>
+
+<h3>Org hierarchy</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--violet)"></span>dim_business_line <span class="badge">636 × 28</span></h4><p>PDS business line hierarchy.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--violet)"></span>dim_business_unit <span class="badge">768 × 24</span></h4><p>Business unit dimension.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--violet)"></span>dim_market <span class="badge">1,097 × 32</span></h4><p>Market / geography rollup (not MSA).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--violet)"></span>dim_function <span class="badge">417 × 19</span></h4><p>Functional hierarchy.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--violet)"></span>dim_account <span class="badge">708 × 16</span></h4><p>Financial account dimension.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--blue)"></span>dim_sup_org <span class="badge">918K × 4</span></h4><p>Supervisory org hierarchy (Workday-style).</p></div>
+</div>
+
+<h3>People</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--teal)"></span>dim_employee <span class="badge">284,567 × 47</span></h4><p>Unified employee dimension.</p>
+<div class="cols"><span class="tag pk">id</span><span class="tag">code</span><span class="tag">name</span><span class="tag">email</span><span class="tag">job_title</span><span class="tag">location_id</span></div></div>
+<div class="card"><h4><span class="dot" style="background:var(--teal)"></span>dim_employee_snapshot <span class="badge">6.22M × 53</span></h4><p>Point-in-time employee snapshots.</p></div>
+</div>
+
+<h3>Calendar &amp; reference</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--amber)"></span>dim_date <span class="badge">7,671 × 22</span></h4><p>Calendar dimension.</p>
+<div class="cols"><span class="tag pk">id</span><span class="tag fk">period_id</span><span class="tag">date</span><span class="tag">year</span><span class="tag">quarter</span></div></div>
+<div class="card"><h4><span class="dot" style="background:var(--amber)"></span>dim_period <span class="badge">540 × 19</span></h4><p>Fiscal / reporting period.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--amber)"></span>dim_currency <span class="badge">306 × 7</span></h4><p>Currency reference.</p>
+<div class="cols"><span class="tag pk">id</span><span class="tag">code</span><span class="tag">name</span><span class="tag">symbol</span></div></div>
+<div class="card"><h4><span class="dot" style="background:var(--amber)"></span>dim_currency_conversion <span class="badge">4.49M × 10</span></h4><p>FX rates by period (from → to).</p>
+<div class="cols"><span class="tag pk">id</span><span class="tag fk">currency_id_from</span><span class="tag fk">currency_id_to</span><span class="tag fk">period_id</span><span class="tag">rate</span></div></div>
+</div>
+
+<h3>Sales</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_opportunity <span class="badge">173,498 × 51</span></h4><p>CRM opportunity dimension.</p>
+<div class="cols"><span class="tag pk">id</span><span class="tag fk">project_id</span><span class="tag">stage</span><span class="tag">company_id</span></div></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_opportunity_line_item <span class="badge">180,294 × 38</span></h4><p>Opportunity line items.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_revenue_milestone <span class="badge">382,824 × 35</span></h4><p>Pipeline revenue milestones.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_revenue_adjustment <span class="badge">50,228 × 55</span></h4><p>Adjustments to pipeline / plan revenue.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_sales_credit <span class="badge">72,620 × 6</span></h4><p>Sales credit allocation.</p></div>
+</div>
+
+<h3>Other dimensions</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_survey_pm <span class="badge">16,526 × 14</span></h4><p>Survey PM linkage.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_assignment_dev_pm <span class="badge">168,244 × 12</span></h4><p>Assignment dev/staging (PM tooling).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_milestone_schedule_dev_pm <span class="badge">3.55M × 13</span></h4><p>Milestone schedule (dev).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_timecard_dev_pm <span class="badge">3.22M × 19</span></h4><p>Timecard staging.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_pds_account_attributes_dev_pm <span class="badge">355,963 × 18</span></h4><p>PDS account attributes (dev).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_company_dev_pm <span class="badge">2,796 × 4</span></h4><p>Company dev slice.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_schedule_milestone_dev_pm <span class="badge">0 × 10</span></h4><p>Schedule milestone (dev; empty in snapshot).</p></div>
+</div>
+
+<h3>Snapshots (point-in-time)</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--rose)"></span>dim_project_snapshot <span class="badge">49.7M × 74</span></h4><p>Unified project history at grain of change.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_project_dssf_snapshot <span class="badge">1.21M × 81</span></h4><p>DSSF project snapshots.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--clarizen)"></span>dim_project_clarizen_snapshot <span class="badge">5.45M × 98</span></h4><p>Clarizen snapshots.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--finance)"></span>dim_project_finance_snapshot <span class="badge">38.8M × 62</span></h4><p>Finance project snapshots.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--ingenious)"></span>dim_project_ingenious_snapshot <span class="badge">135,299 × 91</span></h4><p>Ingenious snapshots.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_opportunity_snapshot <span class="badge">3.79M × 57</span></h4><p>Opportunity periodic snapshots.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_opportunity_line_item_snapshot <span class="badge">3.95M × 44</span></h4><p>OLI snapshot history.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_revenue_milestone_snapshot <span class="badge">8.32M × 41</span></h4><p>Milestone snapshot history.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--dssf)"></span>dim_revenue_adjustment_snapshot <span class="badge">1.10M × 61</span></h4><p>Adjustment snapshot history.</p></div>
+</div>
+
+<h3>Development / staging mirrors</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_business_line_dev_pm <span class="badge">631 × 29</span></h4><p>Business line — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_business_unit_dev_pm <span class="badge">767 × 25</span></h4><p>Business unit — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_market_dev_pm <span class="badge">1,091 × 33</span></h4><p>Market — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_function_dev_pm <span class="badge">416 × 20</span></h4><p>Function — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_account_dev_pm <span class="badge">707 × 15</span></h4><p>Account — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_account_management_master_dev_pm <span class="badge">83 × 139</span></h4><p>Account management master (dev).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_account_management_master_dev_pm__exceptions <span class="badge">10 × 12</span></h4><p>AM master exceptions.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_employee_dev_pm <span class="badge">327,567 × 54</span></h4><p>Employee — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_employee_pm <span class="badge">1 × 22</span></h4><p>Employee PM placeholder.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_date_dev_pm <span class="badge">5,844 × 19</span></h4><p>Date — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_period_dev_pm <span class="badge">540 × 20</span></h4><p>Period — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_currency_dev_pm <span class="badge">80 × 7</span></h4><p>Currency — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_revenue_adjustment_dev_pm <span class="badge">38,066 × 23</span></h4><p>Revenue adjustment — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_revenue_milestone_dev_pm <span class="badge">0 × 38</span></h4><p>Revenue milestone — dev (empty).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_sales_credit_dev_pm <span class="badge">65,062 × 11</span></h4><p>Sales credit — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>dim_sales_credit_dev_pm__exceptions <span class="badge">20 × 12</span></h4><p>Sales credit exceptions.</p></div>
+</div>
+</section>
+
+<section id="panel-facts" class="tab-panel" role="tabpanel">
+<h1>Facts <span style="color:var(--muted);font-size:1rem">(18 tables)</span></h1>
+<p class="sub">Row counts from catalog. <span class="mono">fact_revenue</span> is the primary revenue star; amounts are <span class="mono">amount_base</span> / <span class="mono">amount_usd</span> in the current physical schema.</p>
+
+<h3>Revenue</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--rose)"></span>fact_revenue <span class="badge">103.8M × 20</span></h4><p>Core revenue fact — actuals, pipeline, and plan lines unified.</p>
+<div class="cols"><span class="tag pk">id</span><span class="tag fk">project_id</span><span class="tag fk">opportunity_id</span><span class="tag fk">customer_id</span><span class="tag fk">business_line_id</span><span class="tag fk">market_id</span><span class="tag fk">business_unit_id</span><span class="tag fk">function_id</span><span class="tag fk">account_id</span><span class="tag fk">period_id</span><span class="tag">type</span><span class="tag">ledger</span><span class="tag">amount_usd</span></div></div>
+<div class="card"><h4><span class="dot" style="background:var(--rose)"></span>fact_revenue_snapshot <span class="badge">2.28B × 26</span></h4><p>Massive point-in-time revenue history (storage-heavy).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--lime)"></span>v_fact_revenue_enriched <span class="badge">45.3M × 41</span></h4><p>Enriched revenue view — joins dims for names, hierarchy, calendar.</p></div>
+</div>
+
+<h3>Labor</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--teal)"></span>fact_labor_allocation <span class="badge">942,962 × 18</span></h4><p>Employee–project labor allocation fact.</p>
+<div class="cols"><span class="tag fk">employee_id</span><span class="tag fk">project_id</span><span class="tag fk">business_line_id</span><span class="tag">effective_from_date</span><span class="tag">allocation_percentage</span><span class="tag">fte</span></div></div>
+<div class="card"><h4><span class="dot" style="background:var(--teal)"></span>fact_labor_allocation_snapshot <span class="badge">20.6M × 24</span></h4><p>Labor allocation snapshots over time.</p></div>
+</div>
+
+<h3>Account &amp; surveys</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--violet)"></span>fact_account_timeline <span class="badge">320,450 × 18</span></h4><p>Account-level timeline events.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--blue)"></span>fact_survey_distribution <span class="badge">8,136 × 12</span></h4><p>Survey sends / distribution.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--blue)"></span>fact_survey_response <span class="badge">20,788 × 8</span></h4><p>Survey responses.</p></div>
+</div>
+
+<h3>Project execution</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--amber)"></span>fact_project_budget_pm <span class="badge">4,821 × 5</span></h4><p>Ingenious PM budgets — very sparse vs unified project count.</p>
+<div class="cols"><span class="tag fk">master_project_id</span><span class="tag">original_budget</span><span class="tag">total_approved_budget</span><span class="tag">projected_total_commitments</span><span class="tag">total_invoices</span></div></div>
+<div class="card"><h4><span class="dot" style="background:var(--amber)"></span>fact_schedule_milestone_tud <span class="badge">244,048 × 17</span></h4><p>TUD schedule milestones.</p></div>
+</div>
+
+<h3>Dev / staging facts</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_labor_allocation_dev_pm <span class="badge">890,353 × 11</span></h4><p>Labor allocation — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_labor_allocation_dev_pm__exceptions <span class="badge">190 × 12</span></h4><p>Labor allocation exceptions.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_resource_schedule_dev_pm <span class="badge">0 × 10</span></h4><p>Resource schedule (empty).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_resource_schedule_dev_pm__exceptions <span class="badge">3.17M × 12</span></h4><p>Resource schedule exceptions volume.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_revenue_dev_pm__exceptions <span class="badge">5.09M × 12</span></h4><p>Revenue reconciliation exceptions.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_currency_conversion_dev_pm <span class="badge">0 × 5</span></h4><p>FX dev placeholder (empty).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_project_milestone_dev_pm <span class="badge">0 × 4</span></h4><p>Project milestone dev (empty).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_project_review_dev_pm <span class="badge">0 × 11</span></h4><p>Project review dev (empty).</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>fact_survey_response_dev_pm <span class="badge">0 × 12</span></h4><p>Survey response dev (empty).</p></div>
+</div>
+</section>
+
+<section id="panel-flow" class="tab-panel" role="tabpanel">
+<h1>Data Flow</h1>
+<p class="sub">Logical ETL layers from raw systems to analytics. Names are representative; actual jobs may span multiple notebooks / pipelines.</p>
+<div class="flow">
+<div class="layer"><strong>Layer 0 — Raw sources</strong><p>Curated extracts: <span class="mono">work_dynamics.curated.project</span> filtered by <span class="mono">sourcesystem</span>; <span class="mono">finance.curated.dim_project</span>; <span class="mono">edp_sourcesystem.*</span>; Lightning / DSSF <span class="mono">lightningforce__*</span>; staging <span class="mono">finance__*</span>, <span class="mono">clarizen_*</span>, <span class="mono">ingenious__project</span>, <span class="mono">projectapp__project</span>, etc.</p></div>
+<div class="layer"><strong>Layer 1 — Source-specific grains + ID resolution</strong><p>Build <span class="mono">dim_project_*</span> per source; materialize <span class="mono">id_resolution_project</span>, <span class="mono">id_resolution_employee</span>, <span class="mono">id_resolution_company</span> (and PM/dev variants) to unify keys.</p></div>
+<div class="layer"><strong>Layer 2 — Wide integration</strong><p>Join sources into wide project profiles (<span class="mono">dim_project_wide</span> pattern), compute <span class="mono">best_pds_source</span> and field-level coalesce chains.</p></div>
+<div class="layer"><strong>Layer 3 — Conformed model</strong><p>Publish unified dims (<span class="mono">dim_project</span>, <span class="mono">dim_employee</span>, <span class="mono">dim_opportunity</span>, org/calendar dims) and facts (<span class="mono">fact_revenue</span>, <span class="mono">fact_labor_allocation</span>, surveys, account timeline, TUD milestones).</p></div>
+<div class="layer"><strong>Layer 4 — Analytics &amp; reporting</strong><p>Downstream analytical tables (<span class="mono">analytical_*</span>), metric views, and <span class="mono">vw_*</span> dashboard views (~140) for BI consumers.</p></div>
+</div>
+</section>
+
+<section id="panel-idres" class="tab-panel" role="tabpanel">
+<h1>ID Resolution <span style="color:var(--muted);font-size:1rem">(13 tables)</span></h1>
+<p class="sub">Cross-system identity bridges. Row counts from catalog.</p>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--blue)"></span>id_resolution_project <span class="badge">2.34M rows</span></h4><p>Waterfall typically: DSSF <span class="mono">project_id</span> → Ingenious custom matches → Clarizen → Finance → ProjectApp.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--teal)"></span>id_resolution_employee <span class="badge">1.35M rows</span></h4><p>Maps employee identifiers across HR, finance, and PM sources.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--violet)"></span>id_resolution_company <span class="badge">833,500 rows</span></h4><p>Company resolution via <span class="mono">ovcid</span> and related keys.</p></div>
+</div>
+<h3>Supporting &amp; snapshot tables</h3>
+<div class="grid">
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_project_snapshot <span class="badge">51.3M</span></h4><p>Historical project resolution.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_employee_snapshot <span class="badge">29.0M</span></h4><p>Employee resolution history.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_company_snapshot <span class="badge">18.3M</span></h4><p>Company resolution history.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_project_dev_pm <span class="badge">2.29M</span></h4><p>Project resolution — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_project_dev_pm__exceptions <span class="badge">27,254</span></h4><p>Project resolution exceptions.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_employee_dev_pm <span class="badge">332,439</span></h4><p>Employee resolution — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_employee_dev_pm__exceptions <span class="badge">26,187</span></h4><p>Employee exceptions.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_company_dev_pm <span class="badge">41,914</span></h4><p>Company resolution — dev.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_project_pm <span class="badge">2.33M</span></h4><p>Alternate PM pathway for project keys.</p></div>
+<div class="card"><h4><span class="dot" style="background:var(--muted)"></span>id_resolution_source__project <span class="badge">2.26M</span></h4><p>Source-system ↔ unified project bridge table.</p></div>
+</div>
+</section>
+
+<section id="panel-priority" class="tab-panel" role="tabpanel">
+<h1>Source Priority</h1>
+<p class="sub">Deep analysis of how <span class="mono">dim_project</span> resolves attributes from 5 source systems. Verified empirically against live data (4,035 DSSF+Ingenious overlap projects, 2.27M total).</p>
+
+<h2>Key finding: field-level COALESCE, not record-level</h2>
+<div class="arch">
+<strong>Different fields in the same row can — and regularly do — come from different source systems.</strong> There is no single <span class="mono">best_pds_source</span> column in the physical <span class="mono">dim_project</span> DDL (it's computed at build time but not persisted). Each field has its own COALESCE chain with a field-specific priority order. A single project row may have its <span class="mono">name</span> from DSSF, <span class="mono">phase</span> from Ingenious, <span class="mono">delivery_model</span> mapped from Clarizen, and <span class="mono">market_id</span> from Finance — simultaneously.
+</div>
+
+<h2>How <span class="mono">best_pds_source</span> is determined</h2>
+<p class="sub">Extracted from the actual PySpark notebook (<span class="mono">dim_project</span>, Command 10). This drives the <span class="mono">when(best_pds_source == "X", ...)</span> guards inside each field's COALESCE.</p>
+<div class="arch">
+<strong>Normal case</strong> (Ingenious status is not <span class="mono">external-pending</span>):<br>
+<span class="mono" style="color:var(--ingenious)">Ingenious</span> &gt; <span class="mono" style="color:var(--clarizen)">Clarizen</span> &gt; <span class="mono" style="color:var(--projectapp)">ProjectApp</span><br><br>
+<strong>When <span class="mono">ingenious__status = 'external-pending'</span></strong>:<br>
+<span class="mono" style="color:var(--clarizen)">Clarizen</span> &gt; <span class="mono" style="color:var(--ingenious)">Ingenious</span> &gt; <span class="mono" style="color:var(--projectapp)">ProjectApp</span><br><br>
+<strong>DSSF and Finance are never part of <span class="mono">best_pds_source</span></strong> — they are always consulted via their own explicit positions in each field's COALESCE chain (typically DSSF first or last, Finance always last).
+</div>
+
+<h2>Exact COALESCE logic per field</h2>
+<p class="sub">Extracted from the actual notebook source code (Command 11). Notation: <span class="mono" style="color:var(--dssf)">dssf</span> = unconditional DSSF value. <span class="mono" style="color:var(--teal)">bps→</span> = gated by <span class="mono">when(best_pds_source == X, X__field)</span> — only fires when that source is the <span class="mono">best_pds_source</span>. <span class="mono" style="color:var(--rose)">fin</span> = unconditional Finance value.</p>
+
+<h3>Pattern A — DSSF first, then best_pds_source winner, then Finance</h3>
+<table class="table-stats">
+<thead><tr><th>Field</th><th>Exact COALESCE chain</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">name</span></td><td><span class="mono" style="color:var(--dssf)">dssf.name</span> → <span class="mono" style="color:var(--teal)">bps→clz.name</span> → <span class="mono" style="color:var(--teal)">bps→ing.name</span> → <span class="mono" style="color:var(--teal)">bps→pa.name</span> → <span class="mono" style="color:var(--rose)">fin.name</span></td></tr>
+<tr><td><span class="mono">customer_name</span></td><td><span class="mono" style="color:var(--dssf)">dssf.customer_name</span> → <span class="mono" style="color:var(--teal)">bps→clz.client_name</span> → <span class="mono" style="color:var(--teal)">bps→ing.client_name</span> → <span class="mono" style="color:var(--teal)">bps→pa.client_name</span> → <span class="mono" style="color:var(--rose)">fin.customer_name</span></td></tr>
+<tr><td><span class="mono">ovcid</span></td><td><span class="mono" style="color:var(--dssf)">dssf.ovcid</span> → <span class="mono" style="color:var(--teal)">bps→clz.ovcid</span> → <span class="mono" style="color:var(--teal)">bps→ing.ovcid</span> → <span class="mono" style="color:var(--teal)">bps→pa.ovcid</span></td></tr>
+<tr><td><span class="mono">delivery_model</span></td><td><span class="mono" style="color:var(--dssf)">dssf.delivery_model</span> → <span class="mono" style="color:var(--teal)">bps→clz.delivery_model</span> → <span class="mono" style="color:var(--teal)">bps→ing.delivery_model</span></td></tr>
+<tr><td><span class="mono">business_line_id</span></td><td><span class="mono" style="color:var(--dssf)">dssf.business_line_id</span> → <span class="mono" style="color:var(--teal)">bps→clz.bl</span> → <span class="mono" style="color:var(--teal)">bps→ing.bl</span> → <span class="mono" style="color:var(--teal)">bps→pa.bl</span> → <span class="mono" style="color:var(--rose)">fin.bl</span></td></tr>
+<tr><td><span class="mono">market_id</span></td><td><span class="mono" style="color:var(--dssf)">dssf.market_id</span> → <span class="mono" style="color:var(--teal)">bps→clz.market</span> → <span class="mono" style="color:var(--teal)">bps→ing.market</span> → <span class="mono" style="color:var(--rose)">fin.market</span></td></tr>
+<tr><td><span class="mono">business_unit_id</span></td><td><span class="mono" style="color:var(--dssf)">dssf.business_unit_id</span> → <span class="mono" style="color:var(--rose)">fin.business_unit_id</span></td></tr>
+<tr><td><span class="mono">function_id</span></td><td><span class="mono" style="color:var(--dssf)">dssf.function_id</span> → <span class="mono" style="color:var(--teal)">bps→ing.function_id</span> → <span class="mono" style="color:var(--rose)">fin.function_id</span></td></tr>
+<tr><td><span class="mono">customer_type</span></td><td><span class="mono" style="color:var(--dssf)">dssf.customer_type</span> → <span class="mono" style="color:var(--teal)">bps→clz.customer_type</span></td></tr>
+<tr><td><span class="mono">industry</span></td><td><span class="mono" style="color:var(--dssf)">dssf.industry</span> → <span class="mono" style="color:var(--teal)">bps→clz.industry</span> → <span class="mono" style="color:var(--teal)">bps→pa.industry</span> → <span class="mono" style="color:var(--rose)">fin.industry</span> <em>(Ingenious commented out)</em></td></tr>
+</tbody>
+</table>
+
+<h3>Pattern B — best_pds_source winner first, then DSSF fallback</h3>
+<table class="table-stats">
+<thead><tr><th>Field</th><th>Exact COALESCE chain</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">phase</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.phase</span> → <span class="mono" style="color:var(--teal)">bps→ing.phase</span> → <span class="mono" style="color:var(--teal)">bps→pa.phase</span> <em>(no DSSF — DSSF has no phase)</em></td></tr>
+<tr><td><span class="mono">project_type</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.project_type</span> → <span class="mono" style="color:var(--teal)">bps→ing.project_type</span> → <span class="mono" style="color:var(--teal)">bps→pa.project_type</span> → <span class="mono" style="color:var(--dssf)">dssf.project_type</span></td></tr>
+<tr><td><span class="mono">fitout_type</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.fitout_type</span> → <span class="mono" style="color:var(--teal)">bps→ing.fitout_type</span> → <span class="mono" style="color:var(--dssf)">dssf.fitout_type</span></td></tr>
+<tr><td><span class="mono">service_type</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.service_type</span> → <span class="mono" style="color:var(--teal)">bps→ing.service_type</span> → <span class="mono" style="color:var(--dssf)">dssf.service_type</span></td></tr>
+<tr><td><span class="mono">asset_type</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.asset_type</span> → <span class="mono" style="color:var(--teal)">bps→ing.asset_type</span> → <span class="mono" style="color:var(--teal)">bps→pa.asset_type</span> → <span class="mono" style="color:var(--dssf)">dssf.asset_type</span> → <span class="mono" style="color:var(--rose)">fin.asset_type</span></td></tr>
+<tr><td><span class="mono">start_date</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.start_date</span> → <span class="mono" style="color:var(--teal)">bps→ing.start_date</span> → <span class="mono" style="color:var(--teal)">bps→pa.start_date</span> → <span class="mono" style="color:var(--dssf)">dssf.start_date</span></td></tr>
+<tr><td><span class="mono">end_date</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.end_date</span> → <span class="mono" style="color:var(--teal)">bps→ing.end_date</span> → <span class="mono" style="color:var(--teal)">bps→pa.end_date</span> → <span class="mono" style="color:var(--dssf)">dssf.end_date</span></td></tr>
+<tr><td><span class="mono">address</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.address</span> → <span class="mono" style="color:var(--teal)">bps→ing.address</span> → <span class="mono" style="color:var(--teal)">bps→pa.address</span> → <span class="mono" style="color:var(--dssf)">dssf.address</span></td></tr>
+<tr><td><span class="mono">city</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.city</span> → <span class="mono" style="color:var(--teal)">bps→ing.city</span> → <span class="mono" style="color:var(--teal)">bps→pa.city</span> → <span class="mono" style="color:var(--dssf)">dssf.city</span></td></tr>
+<tr><td><span class="mono">state</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.state</span> → <span class="mono" style="color:var(--teal)">bps→ing.state</span> → <span class="mono" style="color:var(--teal)">bps→pa.state</span> → <span class="mono" style="color:var(--dssf)">dssf.state</span></td></tr>
+<tr><td><span class="mono">postal_code</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.postal_code</span> → <span class="mono" style="color:var(--teal)">bps→ing.postal_code</span> → <span class="mono" style="color:var(--teal)">bps→pa.postal_code</span> → <span class="mono" style="color:var(--dssf)">dssf.postal_code</span></td></tr>
+<tr><td><span class="mono">country</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.country</span> → <span class="mono" style="color:var(--teal)">bps→ing.country</span> → <span class="mono" style="color:var(--teal)">bps→pa.country</span> → <span class="mono" style="color:var(--dssf)">dssf.country</span></td></tr>
+<tr><td><span class="mono">document_folder_url</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.document_folder_url</span> → <span class="mono" style="color:var(--teal)">bps→ing.document_folder_url</span> → <span class="mono" style="color:var(--dssf)">dssf.pds_project_sharepoint_url</span></td></tr>
+</tbody>
+</table>
+
+<h3>Pattern C — best_pds_source winner first, then DSSF, then Finance</h3>
+<table class="table-stats">
+<thead><tr><th>Field</th><th>Exact COALESCE chain</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">project_manager_id</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.pm_id</span> → <span class="mono" style="color:var(--teal)">bps→ing.pm_id</span> → <span class="mono" style="color:var(--dssf)">dssf.pm_id</span> → <span class="mono" style="color:var(--rose)">fin.pm_id</span></td></tr>
+<tr><td><span class="mono">project_manager_name</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.pm_name</span> → <span class="mono" style="color:var(--teal)">bps→ing.pm_name</span> → <span class="mono" style="color:var(--dssf)">dssf.pm_name</span> → <span class="mono" style="color:var(--rose)">fin.pm_name</span></td></tr>
+<tr><td><span class="mono">project_manager_email</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.pm_email</span> → <span class="mono" style="color:var(--teal)">bps→ing.pm_email</span> → <span class="mono" style="color:var(--teal)">bps→pa.pm_email</span> → <span class="mono" style="color:var(--dssf)">dssf.pm_email</span> → <span class="mono" style="color:var(--rose)">fin.pm_email</span></td></tr>
+<tr><td><span class="mono">team_lead_id</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.tl_id</span> → <span class="mono" style="color:var(--teal)">bps→ing.tl_id</span> → <span class="mono" style="color:var(--dssf)">dssf.tl_id</span></td></tr>
+<tr><td><span class="mono">team_lead_name</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.tl_name</span> → <span class="mono" style="color:var(--teal)">bps→ing.tl_name</span> → <span class="mono" style="color:var(--teal)">bps→pa.tl_name</span> → <span class="mono" style="color:var(--dssf)">dssf.tl_name</span></td></tr>
+<tr><td><span class="mono">team_lead_email</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.tl_email</span> → <span class="mono" style="color:var(--teal)">bps→ing.tl_email</span> → <span class="mono" style="color:var(--dssf)">dssf.tl_email</span></td></tr>
+</tbody>
+</table>
+
+<h3>Pattern D — best_pds_source winner only (no DSSF, no Finance)</h3>
+<table class="table-stats">
+<thead><tr><th>Field</th><th>Exact COALESCE chain</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">managed_spend</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.managed_spend</span> → <span class="mono" style="color:var(--teal)">bps→ing.managed_spend</span> → <span class="mono" style="color:var(--teal)">bps→pa.managed_spend</span></td></tr>
+<tr><td><span class="mono">managed_spend_base_currency</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.currency</span> → <span class="mono" style="color:var(--teal)">bps→ing.currency</span></td></tr>
+<tr><td><span class="mono">managed_sf</span></td><td><span class="mono" style="color:var(--teal)">bps→clz.managed_sf</span> → <span class="mono" style="color:var(--teal)">bps→ing.managed_sf</span> → <span class="mono" style="color:var(--teal)">bps→pa.managed_sf</span></td></tr>
+</tbody>
+</table>
+<div class="note"><strong>managed_spend source column.</strong> In the Ingenious prep step (Command 4), <span class="mono">managed_spend</span> is aliased from <span class="mono">total_anticipated_cost</span> — not <span class="mono">current_budget</span>. In Clarizen, it maps to <span class="mono">total_approved_budget</span>. DSSF and Finance budget fields are intentionally excluded from this field.</div>
+
+<h3>Pattern E — special / single-source</h3>
+<table class="table-stats">
+<thead><tr><th>Field</th><th>Logic</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">code</span></td><td><span class="mono">concat_ws(": ", id, name)</span> — computed, not from any source directly</td></tr>
+<tr><td><span class="mono">description</span></td><td><span class="mono">concat_ws("\n", <span style="color:var(--dssf)">dssf.description</span>, COALESCE(<span style="color:var(--teal)">bps→clz.description</span>, <span style="color:var(--teal)">bps→ing.scope_html</span>, <span style="color:var(--teal)">bps→pa.description</span>))</span> — <strong>concatenation</strong> of DSSF + bps winner, not a simple COALESCE</td></tr>
+<tr><td><span class="mono">stage</span></td><td><span class="mono" style="color:var(--dssf)">dssf.stage</span> — DSSF only, no fallback</td></tr>
+<tr><td><span class="mono">opportunity_id</span></td><td><span class="mono" style="color:var(--dssf)">dssf.opportunity_id</span> — DSSF only, no fallback</td></tr>
+<tr><td><span class="mono">dssf_status</span></td><td><span class="mono" style="color:var(--dssf)">dssf.status</span> — passthrough</td></tr>
+<tr><td><span class="mono">ingenious_status</span></td><td><span class="mono" style="color:var(--ingenious)">ingenious.status</span> — passthrough</td></tr>
+<tr><td><span class="mono">clarizen_status</span></td><td><span class="mono" style="color:var(--clarizen)">clarizen.status</span> — passthrough</td></tr>
+<tr><td><span class="mono">ingenious_domain</span></td><td><span class="mono" style="color:var(--ingenious)">ingenious.domain</span> — passthrough</td></tr>
+<tr><td><span class="mono">l2..l7</span>, <span class="mono">l2_id..l7_id</span></td><td><span class="mono" style="color:var(--rose)">finance.tree_level_*</span> — Finance only, no fallback</td></tr>
+</tbody>
+</table>
+
+<h2>How the <span class="mono">when(bps == "X", ...)</span> guard works</h2>
+<div class="arch">
+The <span class="mono">when(best_pds_source == "ingenious", ingenious__field)</span> expression returns <strong>NULL when the condition is false</strong>. Inside a <span class="mono">COALESCE</span>, this means the value is skipped and the next argument is tried. So the pattern <span class="mono">COALESCE(bps→clz, bps→ing, dssf)</span> means: if <span class="mono">best_pds_source</span> is "clarizen" and Clarizen has a value, use it. If not (either bps isn't "clarizen", or the value is NULL), try Ingenious — but only if bps is "ingenious". Otherwise fall through to DSSF unconditionally.<br><br>
+<strong>This means:</strong> if a project has <span class="mono">best_pds_source = "ingenious"</span> and Ingenious has a NULL city, but Clarizen has "New York" — <strong>Clarizen's city is NOT used</strong> because the CLZ guard fails (bps ≠ "clarizen"). The field falls through to DSSF. This is a deliberate design choice to avoid mixing PM-system data from a non-preferred source.
+</div>
+
+<h2>Value mapping via reference tables</h2>
+<p class="sub">Before entering the COALESCE, many fields are value-mapped through CSV reference tables. These normalize source-specific values into a standard vocabulary.</p>
+<table class="table-stats">
+<thead><tr><th>Reference table</th><th>Fields mapped</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">asset_type.csv</span></td><td><span class="mono">asset_type</span> for all sources</td><td>Source "Health Care Facility" → dim_project "Healthcare"</td></tr>
+<tr><td><span class="mono">delivery_model.csv</span></td><td><span class="mono">delivery_model</span></td><td>CLZ <span class="mono">jll_role</span>: "Principal" → "Principal (at risk)", "Contracting Manager" → "Principal (not at risk)"</td></tr>
+<tr><td><span class="mono">project_type.csv</span></td><td><span class="mono">project_type</span></td><td>DSSF "PDS - Fitout" → "Fitout"</td></tr>
+<tr><td><span class="mono">fitout_type.csv</span></td><td><span class="mono">fitout_type</span></td><td>Normalizes across CLZ/ING/DSSF variations</td></tr>
+<tr><td><span class="mono">industry.csv</span></td><td><span class="mono">industry</span></td><td>FIN "Health Care & Social Assistance" → "Healthcare"</td></tr>
+<tr><td><span class="mono">customer_type.csv</span></td><td><span class="mono">customer_type</span></td><td>DSSF-specific mapping</td></tr>
+<tr><td><span class="mono">service_type.csv</span></td><td><span class="mono">service_type</span></td><td>DSSF: from <span class="mono">primary_business_product_sold</span></td></tr>
+<tr><td><span class="mono">clarizen_markets.csv</span></td><td><span class="mono">market_id</span> for CLZ</td><td>CLZ market names → standard market IDs</td></tr>
+</tbody>
+</table>
+
+<h2>Deduplication: multiple IDs from one source</h2>
+<p class="sub">When ID resolution maps multiple source-system projects to the same <span class="mono">master_project_id</span>, the system retains all IDs but picks one "best" per source.</p>
+
+<div class="grid" style="grid-template-columns:repeat(3,1fr)">
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">How many duplicates?</h4>
+<p><strong>66</strong> projects have 2+ Ingenious IDs (max 4). <strong>705</strong> projects have 2 Finance IDs. <strong>9</strong> projects have 2 Clarizen IDs. DSSF and ProjectApp are always 1:1.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--teal)">
+<h4 style="font-size:.82rem">How is "best" chosen?</h4>
+<p>For Ingenious (from notebook): non-test first, then status rank: <span class="mono">completed(1)</span> &gt; <span class="mono">in-progress(2)</span> &gt; <span class="mono">scheduled(3)</span> &gt; <span class="mono">feasibility(4)</span> &gt; <span class="mono">on-hold(5)</span> &gt; <span class="mono">external-pending(6)</span> &gt; <span class="mono">cancelled(7)</span>, then by <span class="mono">managed_spend DESC</span>, then <span class="mono">created_at DESC</span>.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--blue)">
+<h4 style="font-size:.82rem">All IDs preserved</h4>
+<p><span class="mono">best_*_id</span> picks one ID for field extraction. <span class="mono">*_ids</span> arrays store ALL matched IDs. <span class="mono">*_count</span> fields track how many. Downstream consumers can access the full set if needed.</p>
+</div>
+</div>
+
+<h3>Example: PR-034566 (4 Ingenious IDs)</h3>
+<div class="arch">
+Four Ingenious projects (<em>Emerus Staff Augmentation</em>, <em>OCED - Lynnwood</em>, <em>OCED - Bremerton</em>, <em>OCED - Yakima</em>) all share <span class="mono">custom_id = PR-034566</span>. All are <span class="mono">in-progress</span> / <span class="mono">Construct</span>. The "best" is selected (likely by creation order or internal tiebreak), and its fields flow into <span class="mono">dim_project</span>. <strong>The other 3 projects' attribute data is effectively discarded</strong> at the unified dimension level.
+</div>
+
+<h2>Worked example: PR-034821</h2>
+<p class="sub">Four-source project (DSSF + Ingenious + Clarizen + Finance). The table below shows which source won for each field.</p>
+<table class="table-stats">
+<thead><tr><th>Field</th><th>Unified value</th><th>Winner</th><th>Alternatives</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">name</span></td><td>2856 Forehand Drive Rehab Clinic</td><td style="color:var(--dssf)">DSSF+ING</td><td>CLZ: "Fishing Point Rehab Center Chesapeake"</td></tr>
+<tr><td><span class="mono">phase</span></td><td>Closed</td><td style="color:var(--ingenious)">ING</td><td>CLZ: "Construct"</td></tr>
+<tr><td><span class="mono">stage</span></td><td>Completed</td><td style="color:var(--dssf)">DSSF</td><td>CLZ: NULL</td></tr>
+<tr><td><span class="mono">customer_name</span></td><td>Fishing Point Healthcare, a Tribal LLC</td><td style="color:var(--dssf)">DSSF</td><td>ING: "Fishing Point Healthcare" (truncated)</td></tr>
+<tr><td><span class="mono">project_type</span></td><td>Fitout</td><td style="color:var(--ingenious)">ING+CLZ</td><td>DSSF: "PDS - Fitout"; FIN: "Non IFM_PAM ex REIMB Payroll"</td></tr>
+<tr><td><span class="mono">city</span></td><td>Richmond</td><td style="color:var(--ingenious)">ING</td><td>DSSF: NULL; CLZ: "Chesapeake"</td></tr>
+<tr><td><span class="mono">start_date</span></td><td>2023-12-14</td><td style="color:var(--ingenious)">ING</td><td>CLZ: 2023-10-31</td></tr>
+<tr><td><span class="mono">end_date</span></td><td>2025-07-08</td><td style="color:var(--ingenious)">ING</td><td>DSSF: 2025-06-30; CLZ: 2025-06-30</td></tr>
+<tr><td><span class="mono">managed_spend</span></td><td>7,357,895.65</td><td style="color:var(--ingenious)">ING (total_anticipated_cost)</td><td>DSSF: 139K; CLZ: 6.49M; FIN: 204K</td></tr>
+<tr><td><span class="mono">business_unit_id</span></td><td>US002</td><td style="color:var(--dssf)">DSSF</td><td>FIN: US001</td></tr>
+<tr><td><span class="mono">delivery_model</span></td><td>Agent</td><td style="color:var(--clarizen)">CLZ (mapped)</td><td>DSSF: NULL (Clarizen jll_role → Agent)</td></tr>
+</tbody>
+</table>
+<div class="note"><strong>Implication.</strong> When consuming <span class="mono">dim_project</span>, you cannot assume all fields come from one source. If you need source-specific values (e.g. DSSF's project name vs Ingenious's), you must join to the source-specific <span class="mono">dim_project_*</span> tables using the <span class="mono">best_*_id</span> columns or the <span class="mono">*_ids</span> arrays.</div>
+
+</section>
+
+<section id="panel-issues" class="tab-panel" role="tabpanel">
+<h1>Issues &amp; Gaps</h1>
+<p class="sub">Corrected framing — currency facts exist; revenue facts are present at scale.</p>
+
+<div class="issue crit"><b>Critical</b><p>No <span class="mono">is_jll_pds_managed_project</span> (or equivalent) flag on <span class="mono">dim_project</span> — ~2.2M+ rows include non-PDS or peripheral projects; filters are source-heuristic today.</p></div>
+<div class="issue crit"><b>Critical</b><p>Phase / status not standardized — 15+ distinct values across systems complicate lifecycle reporting.</p></div>
+
+<div class="issue warn"><b>Warning</b><p>Area unit-of-measure inconsistency in <span class="mono">dim_project_ingenious</span> (<span class="mono">unitofmeasure</span> vs <span class="mono">unitofmeasurement</span> column naming).</p></div>
+<div class="issue warn"><b>Warning</b><p>Country / state values not normalized (no consistent ISO-3166 application in core dims).</p></div>
+<div class="issue warn"><b>Warning</b><p>No metropolitan statistical area (MSA) assignment in the core model — <span class="mono">metro_lookup</span> patterns exist in other assets but not conformed here.</p></div>
+<div class="issue warn"><b>Warning</b><p>Business line / unit / function attributes sparse for non-DSSF-heavy projects.</p></div>
+
+<div class="issue info"><b>Info</b><p><span class="mono">dim_project.managed_spend</span> remains in base currency; conversion infrastructure exists via <span class="mono">dim_currency_conversion</span> but is not yet applied to this column.</p></div>
+<div class="issue info"><b>Info</b><p>Some reference data still sourced from CSV / external files rather than first-class dims.</p></div>
+<div class="issue info"><b>Info</b><p>Deduplication ranking may drop valid secondary matches when multiple source rows compete.</p></div>
+
+<div class="issue enh"><b>Enhancement</b><p><span class="mono">dim_customer</span> — unified customer dim; <span class="mono">id_resolution_company</span> is a starting point.</p></div>
+<div class="issue enh"><b>Enhancement</b><p>Risk factor scoring not yet modeled as conformed attributes.</p></div>
+<div class="issue enh"><b>Enhancement</b><p><span class="mono">fact_project_budget_pm</span> only ~4.8K rows — extremely sparse vs ~2.3M projects in <span class="mono">dim_project</span>.</p></div>
+</section>
+
+<section id="panel-stats" class="tab-panel" role="tabpanel">
+<h1>Schema Stats</h1>
+<p class="sub">All <strong>407</strong> objects in <span class="mono">work_dynamics.ds_pds_global</span> grouped by name prefix. Row totals sum physical table stats from catalog (views may reflect estimated or full-scan counts).</p>
+<table class="table-stats">
+<thead><tr><th>Prefix / bucket</th><th>Objects</th><th>Σ rows (catalog)</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">dim_</span></td><td class="mono">56</td><td class="mono">139,839,856</td></tr>
+<tr><td><span class="mono">fact_</span></td><td class="mono">18</td><td class="mono">2,419,428,345</td></tr>
+<tr><td><span class="mono">id_resolution_</span></td><td class="mono">13</td><td class="mono">110,506,128</td></tr>
+<tr><td><span class="mono">analytical_</span></td><td class="mono">18</td><td class="mono">151,890,933</td></tr>
+<tr><td><span class="mono">vw_</span></td><td class="mono">140</td><td class="mono">42,395,659,768</td></tr>
+<tr><td><span class="mono">lightningforce__</span></td><td class="mono">24</td><td class="mono">59,096,923</td></tr>
+<tr><td><span class="mono">finance__</span></td><td class="mono">26</td><td class="mono">125,871,259</td></tr>
+<tr><td><span class="mono">clarizen_</span></td><td class="mono">5</td><td class="mono">2,686,548</td></tr>
+<tr><td><span class="mono">game_</span></td><td class="mono">14</td><td class="mono">729,975</td></tr>
+<tr><td><span class="mono">amer_</span></td><td class="mono">13</td><td class="mono">13,286,663</td></tr>
+<tr><td><span class="mono">pds_</span></td><td class="mono">10</td><td class="mono">2,823,566</td></tr>
+<tr><td><span class="mono">tbl_</span></td><td class="mono">10</td><td class="mono">1,355,595</td></tr>
+<tr><td><span class="mono">smartsheet_</span></td><td class="mono">6</td><td class="mono">829</td></tr>
+<tr><td><span class="mono">ref_</span></td><td class="mono">6</td><td class="mono">92,202</td></tr>
+<tr><td><span class="mono">wip_</span></td><td class="mono">3</td><td class="mono">104,400,472</td></tr>
+<tr><td><em>other</em> (no prefix match)</td><td class="mono">45</td><td class="mono">76,209,803</td></tr>
+<tr style="font-weight:600;background:var(--s2)"><td>Total</td><td class="mono">407</td><td class="mono">45,603,878,865</td></tr>
+</tbody>
+</table>
+<p class="note"><strong>Other (45)</strong> includes integration tables (<span class="mono">ingenious__project</span>, <span class="mono">projectapp__project</span>, <span class="mono">peoplesoft__project</span>), TUD / placemat feeds, Workday exports, lineage dev tables, and standalone views such as <span class="mono">v_fact_revenue_enriched</span>.</p>
+</section>
+
+<section id="panel-snapshots" class="tab-panel" role="tabpanel">
+<h1>Snapshot Mechanism</h1>
+<p class="sub">How the <span class="mono">*_snapshot</span> tables preserve point-in-time history. This is <strong>not SCD Type 2</strong> — it's a <em>periodic full-table copy</em> pattern with rolling retention and permanent monthly archives.</p>
+
+<h2>Method: Periodic Full-Table Copy</h2>
+<div class="arch">
+<strong>Key distinction.</strong> There are no <span class="mono">valid_from</span> / <span class="mono">valid_to</span> / <span class="mono">is_current</span> columns. Each snapshot is a <em>complete copy</em> of the entire base table at a point in time — not an incremental change capture. This is a <strong>Periodic Snapshot Fact Table</strong> pattern in Kimball terms.
+</div>
+
+<h2>The 3-Step Pipeline Cycle</h2>
+<p class="sub">The Delta table history reveals a consistent, repeating pattern that runs <strong>multiple times per day</strong> (~every 6 hours).</p>
+<div class="flow">
+<div class="layer" style="border-left-color:var(--lime)"><strong>Step 1 — WRITE (Append full copy)</strong><p>A full <span class="mono">SELECT *</span> of the base table is appended to the snapshot table. Five metadata columns are stamped onto every row: <span class="mono">snapshot_date</span>, <span class="mono">snapshot_timestamp</span>, <span class="mono">pds_gold_snapshot_version</span>, <span class="mono">source_table_version</span>, and <span class="mono">is_monthly_archive</span>.</p></div>
+<div class="layer" style="border-left-color:var(--amber)"><strong>Step 2 — DELETE (same-day dedup)</strong><p>Removes any earlier snapshot from the same calendar day: <span class="mono">DELETE WHERE snapshot_date = '&lt;today&gt;' AND pds_gold_snapshot_version &lt; &lt;current&gt;</span>. Only the latest run of each day survives — even though the pipeline fires ~4× daily, one snapshot per day is retained.</p></div>
+<div class="layer" style="border-left-color:var(--rose)"><strong>Step 3 — DELETE (rolling prune)</strong><p>Removes old non-archived daily snapshots: <span class="mono">DELETE WHERE snapshot_date &lt; '&lt;~30d ago&gt;' AND NOT is_monthly_archive</span>. Daily snapshots are retained for ~30 days, then purged. Monthly archives flagged <span class="mono">is_monthly_archive = TRUE</span> are kept <strong>permanently</strong>.</p></div>
+<div class="layer" style="border-left-color:var(--muted)"><strong>Periodic — VACUUM</strong><p>Delta <span class="mono">VACUUM</span> runs to reclaim orphaned Parquet files. Default retention of 7 days (<span class="mono">604800000 ms</span>) with <span class="mono">retentionCheckEnabled = false</span>.</p></div>
+</div>
+
+<h2>Snapshot Metadata Columns</h2>
+<p class="sub">These five columns are appended to every row in gold/core snapshot tables — they do not exist on the base tables.</p>
+<table class="table-stats">
+<thead><tr><th>Column</th><th>Type</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">snapshot_date</span></td><td class="mono">string</td><td>Calendar date of the snapshot (also used as partition key)</td></tr>
+<tr><td><span class="mono">snapshot_timestamp</span></td><td class="mono">timestamp</td><td>Exact capture time (UTC)</td></tr>
+<tr><td><span class="mono">pds_gold_snapshot_version</span></td><td class="mono">int</td><td>Auto-incrementing version from <span class="mono">snapshot_version_tracking</span></td></tr>
+<tr><td><span class="mono">source_table_version</span></td><td class="mono">int</td><td>Delta table version of the base table at capture time</td></tr>
+<tr><td><span class="mono">is_monthly_archive</span></td><td class="mono">boolean</td><td>If <span class="mono">TRUE</span>, this snapshot is a permanent month-end archive</td></tr>
+</tbody>
+</table>
+
+<h2>Version Tracking Registry</h2>
+<p class="sub"><span class="mono">snapshot_version_tracking</span> (28 rows) serves as the central registry. The <span class="mono">vw_relevant_revenue_snapshots</span> view provides named aliases for key versions.</p>
+<div class="grid" style="grid-template-columns:1fr 1fr">
+<div class="card">
+<h4><span class="dot" style="background:var(--teal)"></span>snapshot_version_tracking <span class="badge">28 rows</span></h4>
+<p>Central version registry. One row per pipeline execution, incrementing <span class="mono">pds_gold_snapshot_version</span> across all gold snapshot tables simultaneously.</p>
+<div class="cols"><span class="tag pk">pds_gold_snapshot_version</span><span class="tag">snapshot_date</span><span class="tag">snapshot_timestamp</span><span class="tag">is_monthly_archive</span></div>
+</div>
+<div class="card">
+<h4><span class="dot" style="background:var(--blue)"></span>vw_relevant_revenue_snapshots <span class="badge">4 rows</span></h4>
+<p>Named aliases for key snapshots — allows BI consumers to reference snapshots by business meaning rather than version numbers.</p>
+<table class="table-stats" style="margin-top:.5rem">
+<thead><tr><th>Version</th><th>Name</th></tr></thead>
+<tbody>
+<tr><td class="mono">v106</td><td>Current</td></tr>
+<tr><td class="mono">v103</td><td>Yesterday</td></tr>
+<tr><td class="mono">v75</td><td>Last Week</td></tr>
+<tr><td class="mono">v67</td><td>Last Month</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h2>Two Snapshot Families</h2>
+
+<h3>Gold / Core Snapshots (16 tables)</h3>
+<p class="sub">Automated ~6-hour cadence, 30-day rolling retention + permanent monthly archives. Consistently ~22 snapshots retained at any given time.</p>
+<table class="table-stats">
+<thead><tr><th>Snapshot Table</th><th>Base Table</th><th>Base Rows</th><th>Snapshot Rows</th><th>~Retained</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">dim_project_snapshot</span></td><td><span class="mono">dim_project</span></td><td class="mono">2,265,339</td><td class="mono">49,699,258</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_project_finance_snapshot</span></td><td><span class="mono">dim_project_finance</span></td><td class="mono">1,771,404</td><td class="mono">38,848,865</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_project_clarizen_snapshot</span></td><td><span class="mono">dim_project_clarizen</span></td><td class="mono">248,166</td><td class="mono">5,446,486</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_project_dssf_snapshot</span></td><td><span class="mono">dim_project_dssf</span></td><td class="mono">55,489</td><td class="mono">1,208,100</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_project_ingenious_snapshot</span></td><td><span class="mono">dim_project_ingenious</span></td><td class="mono">6,289</td><td class="mono">135,299</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">fact_revenue_snapshot</span></td><td><span class="mono">fact_revenue</span></td><td class="mono">103,835,470</td><td class="mono">2,284,257,568</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">analytical_revenue_snapshot</span></td><td><span class="mono">analytical_revenue</span></td><td class="mono">3,220,009</td><td class="mono">70,715,020</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">fact_labor_allocation_snapshot</span></td><td><span class="mono">fact_labor_allocation</span></td><td class="mono">942,962</td><td class="mono">20,640,759</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_employee_snapshot</span></td><td><span class="mono">dim_employee</span></td><td class="mono">284,567</td><td class="mono">6,220,924</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_opportunity_snapshot</span></td><td><span class="mono">dim_opportunity</span></td><td class="mono">173,498</td><td class="mono">3,794,813</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_opportunity_line_item_snapshot</span></td><td><span class="mono">dim_opportunity_line_item</span></td><td class="mono">180,294</td><td class="mono">3,945,270</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_revenue_milestone_snapshot</span></td><td><span class="mono">dim_revenue_milestone</span></td><td class="mono">382,824</td><td class="mono">8,324,092</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">dim_revenue_adjustment_snapshot</span></td><td><span class="mono">dim_revenue_adjustment</span></td><td class="mono">50,228</td><td class="mono">1,100,362</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">id_resolution_project_snapshot</span></td><td><span class="mono">id_resolution_project</span></td><td class="mono">2,340,603</td><td class="mono">51,342,167</td><td class="mono">~22</td></tr>
+<tr><td><span class="mono">id_resolution_employee_snapshot</span></td><td><span class="mono">id_resolution_employee</span></td><td class="mono">1,350,762</td><td class="mono">29,040,725</td><td class="mono">~21</td></tr>
+<tr><td><span class="mono">id_resolution_company_snapshot</span></td><td><span class="mono">id_resolution_company</span></td><td class="mono">833,500</td><td class="mono">18,291,738</td><td class="mono">~22</td></tr>
+</tbody>
+</table>
+
+<h3>Operational / Dashboard Snapshots (11 tables)</h3>
+<p class="sub">Simpler metadata schema using <span class="mono">snapshot_quarter</span> + <span class="mono">snapshot_month</span>. Quarterly/monthly cadence only — much lower row ratios (~2× base).</p>
+<table class="table-stats">
+<thead><tr><th>Snapshot Table</th><th>Rows</th><th>Metadata Columns</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">vw_amer_iprdashboard_snapshot</span></td><td class="mono">4,368</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">vw_amer_operationsdash_project_snapshot</span></td><td class="mono">20,173</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">vw_amer_operationsdash_employee_snapshot</span></td><td class="mono">18,536</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">vw_amer_operationsdash_opportunity_snapshot</span></td><td class="mono">75,703</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">vw_amer_operationsdash_assignment_snapshot</span></td><td class="mono">696,873</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">vw_amer_operationsdash_weeklyprojects_snapshot</span></td><td class="mono">397,588</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">vw_amer_operationsdash_timecard_snapshot</span></td><td class="mono">257,561</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">vw_amer_operationsdash_missingtimecard_snapshot</span></td><td class="mono">492,621</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">vw_amer_operationsdash_ingeniousforms_snapshot</span></td><td class="mono">999</td><td><span class="mono">snapshot_quarter, snapshot_month</span></td></tr>
+<tr><td><span class="mono">smartsheet_tbl_accountmanagement_pcsi_snapshot</span></td><td class="mono">283</td><td><span class="mono">snapshot_timestamp</span></td></tr>
+<tr><td><span class="mono">smartsheet_tbl_sales_credit_override_snapshot</span></td><td class="mono">7</td><td><span class="mono">snapshot_timestamp</span></td></tr>
+</tbody>
+</table>
+
+<h2>Retention Policy Summary</h2>
+<div class="grid" style="grid-template-columns:repeat(3,1fr)">
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">Daily Snapshots</h4>
+<p>Retained for <strong>~30 days</strong>. One per day (latest pipeline run wins). Pruned by rolling DELETE when <span class="mono">snapshot_date</span> falls outside the window.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">Monthly Archives</h4>
+<p>Flagged <span class="mono">is_monthly_archive = TRUE</span>. <strong>Permanently retained</strong> — excluded from rolling prune. One per month captures the month-end state.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem">Intra-Day Dedup</h4>
+<p>Pipeline runs ~4× daily but only the <strong>last run wins</strong>. Earlier same-day snapshots are DELETEd before the prune step, preventing unbounded growth.</p>
+</div>
+</div>
+
+<h2>What This Is NOT</h2>
+<div class="grid" style="grid-template-columns:1fr 1fr">
+<div class="issue info" style="margin:0">
+<b>Not SCD Type 2</b>
+<p>No <span class="mono">valid_from</span> / <span class="mono">valid_to</span> / <span class="mono">is_current</span> columns. No row-level change tracking. You cannot determine <em>which specific rows changed</em> between two snapshots without diffing them.</p>
+</div>
+<div class="issue info" style="margin:0">
+<b>Not Incremental / CDC</b>
+<p>Each snapshot is a full copy of the base table, not just changed rows. Storage is proportional to <span class="mono">base_rows × retained_snapshots</span> — e.g. <span class="mono">fact_revenue_snapshot</span> holds <strong>2.28 billion rows</strong> (103.8M × ~22).</p>
+</div>
+</div>
+<div class="note" style="margin-top:.75rem"><strong>Use case.</strong> This strategy is optimized for temporal analysis — "what did the project portfolio look like last month?" or "how did pipeline revenue change week over week?" — rather than granular row-level audit trails. The <span class="mono">vw_relevant_revenue_snapshots</span> view makes it easy to compare <em>Current</em> vs <em>Last Month</em> without knowing version numbers.</div>
+
+</section>
+
+<section id="panel-concerns" class="tab-panel" role="tabpanel">
+<h1>Concerns &amp; Recommendations</h1>
+<p class="sub">Four critical concerns identified through analysis of the <span class="mono">ds_pds_global</span> schema, the <span class="mono">dim_project</span> notebook source code, and live catalog data. Each includes evidence, references, and specific remediation steps.</p>
+
+<!-- ─── CONCERN 1 ─── -->
+<h2>1. Field-Level Source Blending</h2>
+<div class="issue crit">
+<b>Problem</b>
+<p>A single <span class="mono">dim_project</span> row can mix fields from <strong>5 different source systems</strong> (DSSF, Ingenious, Clarizen, ProjectApp, Finance) with no provenance columns in the output. Consumers cannot determine which source contributed which value. <strong>68,329 projects</strong> have 2+ source systems where blending occurs, and <strong>780 projects</strong> have duplicate IDs within a single source requiring deduplication.</p>
+</div>
+
+<h3>Evidence</h3>
+<div class="grid">
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem">best_pds_source logic</h4>
+<p>Notebook Command 10 computes <span class="mono">best_pds_source</span> at build time but <strong>does not persist it</strong> to the physical table. Normal priority: <span class="mono" style="color:var(--teal)">Ingenious</span> &gt; <span class="mono" style="color:var(--amber)">Clarizen</span> &gt; <span class="mono" style="color:var(--violet)">ProjectApp</span>. When Ingenious status is <span class="mono">external-pending</span>, Clarizen takes precedence. DSSF and Finance are never part of <span class="mono">best_pds_source</span> — they occupy fixed positions in each field's COALESCE chain.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem">5 COALESCE patterns</h4>
+<p>Fields follow 5 distinct patterns (A–E): DSSF-first, bps-first, bps-then-DSSF-then-Finance, bps-only, and special/single-source. Each field has its own priority chain — <span class="mono">name</span> starts with DSSF, but <span class="mono">phase</span> starts with the bps winner. See the <a href="#priority">Source Priority</a> tab for exact chains.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem">Notebook author's own To Do</h4>
+<p>The notebook ends with a candid list of gaps, including: <em>"determine if a project is an actual pds-managed project — we need to be able to <span class="mono">SELECT COUNT(*) FROM dim_project WHERE is_jll_pds_managed_project</span>"</em> — this flag does not exist. Also notes currency conversion is not applied to <span class="mono">managed_spend</span>.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem">Unversioned reference tables</h4>
+<p>8 CSV files (<span class="mono">asset_type.csv</span>, <span class="mono">delivery_model.csv</span>, <span class="mono">fitout_type.csv</span>, <span class="mono">industry.csv</span>, <span class="mono">project_type.csv</span>, <span class="mono">customer_type.csv</span>, <span class="mono">service_type.csv</span>, <span class="mono">clarizen_markets.csv</span>) are loaded via <span class="mono">pd.read_csv()</span> from <span class="mono">/Workspace/Shared/PDS/...</span> at runtime. They are not persisted as queryable tables and have no version history.</p>
+</div>
+</div>
+
+<h3>Recommendations</h3>
+<div class="grid">
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R1.1 — Add source-tracking columns</h4>
+<p>For every COALESCE'd field (e.g., <span class="mono">name</span>, <span class="mono">sector</span>, <span class="mono">managed_spend</span>), add a companion <span class="mono">{field}_source</span> column. Implementation: duplicate the existing <span class="mono">when()</span> chain in Command 11, returning the source name (<span class="mono">lit("dssf")</span>, <span class="mono">lit("ingenious")</span>, etc.) instead of the value. This makes provenance queryable: <span class="mono">SELECT name, name_source FROM dim_project</span>.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R1.2 — Persist reference tables as Delta</h4>
+<p>Replace the 8 <span class="mono">pd.read_csv()</span> calls with versioned Delta tables in the schema (e.g., <span class="mono">ref_asset_type</span>, <span class="mono">ref_delivery_model</span>). Benefits: auditable change history via Delta time travel, queryable by downstream consumers, and no dependency on workspace filesystem paths. Load once, reference by table name.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R1.3 — Create a field lineage view</h4>
+<p>Build <span class="mono">vw_dim_project_field_lineage</span> that joins <span class="mono">dim_project</span> with each source-specific dim via <span class="mono">best_*_id</span> columns. For each field, show: unified value, DSSF value, Ingenious value, Clarizen value, and which source won. Enables consumers to validate and debug blended results without writing complex multi-join queries.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R1.4 — Define is_jll_pds_managed_project</h4>
+<p>Convene a working group to define the business rules for this flag (the notebook author identifies test projects, capital planning, third-party-managed, and no-budget/no-schedule as open questions). Encode rules as a configurable reference table (<span class="mono">ref_managed_project_rules</span>) and compute the flag in the notebook. This is the single most impactful improvement for analytics accuracy.</p>
+</div>
+</div>
+
+<!-- ─── CONCERN 2 ─── -->
+<h2>2. Snapshot Methodology Gaps</h2>
+<div class="issue crit">
+<b>Problem</b>
+<p>The snapshot mechanism uses a <strong>periodic full-table copy</strong> (not SCD Type 2 or CDC). The retention policy keeps daily snapshots for only ~30 days, then one monthly archive. This means: <strong>intra-day changes are lost</strong> (last pipeline run wins, ~4 runs/day), and <strong>after 30 days, intra-month changes are lost</strong> (only month-end snapshot survives). Any analytics requiring "when did this field change?" at finer granularity cannot be supported.</p>
+</div>
+
+<h3>Evidence</h3>
+<div class="grid">
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">3-step pipeline cycle</h4>
+<p>Delta table history reveals: <strong>Step 1 — WRITE</strong> (full <span class="mono">SELECT *</span> append with 5 metadata columns), <strong>Step 2 — DELETE</strong> (same-day dedup: earlier same-day snapshots removed), <strong>Step 3 — DELETE</strong> (rolling prune: non-archived snapshots older than ~30 days removed), followed by periodic <strong>VACUUM</strong>. See the <a href="#snapshots">Snapshots</a> tab for details.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">Storage cost</h4>
+<p><span class="mono">fact_revenue_snapshot</span> holds <strong>2.28 billion rows</strong> (103.8M base × ~22 retained snapshots). Each snapshot is a full copy — identical rows are duplicated across snapshots even if they never changed. Total snapshot storage across all 16 gold tables exceeds <strong>2.5 billion rows</strong>.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">No change detection</h4>
+<p>There are no <span class="mono">valid_from</span> / <span class="mono">valid_to</span> / <span class="mono">is_current</span> columns. No row-level change tracking. Determining which rows changed between snapshots requires a full-table diff — computationally expensive at 100M+ row scale.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">Version tracking</h4>
+<p><span class="mono">snapshot_version_tracking</span> (28 rows) is the central registry. <span class="mono">vw_relevant_revenue_snapshots</span> provides named aliases (Current, Yesterday, Last Week, Last Month) but only 4 are defined — no programmatic way to request "the snapshot from March 15th" without knowing the version number.</p>
+</div>
+</div>
+
+<h3>Recommendations</h3>
+<div class="grid">
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R2.1 — Implement CDC for high-value dimensions</h4>
+<p>For <span class="mono">dim_project</span> and <span class="mono">dim_opportunity</span>, switch to a CDC-based approach that records only changed rows with <span class="mono">valid_from</span> / <span class="mono">valid_to</span> timestamps (true SCD Type 2). This captures every change without duplicating unchanged rows. Keep the periodic snapshot for <span class="mono">fact_revenue</span> where full-table comparison is the intended use case.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R2.2 — Extend daily retention to 90 days</h4>
+<p>The current ~30-day rolling window loses intra-month granularity too quickly for quarterly reporting cycles. Extend to 90 days. For <span class="mono">dim_project_snapshot</span> (2.27M rows/snapshot), this increases from ~50M to ~200M rows — manageable with Delta Lake compression and Z-ordering on <span class="mono">snapshot_date</span>.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R2.3 — Add changed_fields metadata</h4>
+<p>When writing snapshots, compare each incoming row to the previous snapshot (hash-based or column-by-column) and store a <span class="mono">changed_fields</span> array column listing which fields changed. This enables efficient "what changed?" queries without full-row comparison: <span class="mono">SELECT * FROM dim_project_snapshot WHERE array_contains(changed_fields, 'managed_spend')</span>.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R2.4 — Evaluate Delta Lake Change Data Feed</h4>
+<p>Databricks natively supports <strong>Change Data Feed (CDF)</strong> which automatically captures row-level changes (inserts, updates, deletes) with zero additional ETL. Enable with <span class="mono">ALTER TABLE SET TBLPROPERTIES (delta.enableChangeDataFeed = true)</span>. This is the lowest-effort path to true change tracking on the base tables themselves.</p>
+</div>
+</div>
+
+<!-- ─── CONCERN 3 ─── -->
+<h2>3. Transformation Timing &amp; Performance</h2>
+<div class="issue warn">
+<b>Problem</b>
+<p>There is <strong>no observable scheduling configuration</strong> in the repository — no Airflow DAGs, no Databricks Workflow YAML, no cron definitions. The transformation chain (raw → source dims → ID resolution → dim_project → snapshots) has no visible dependency management, parallelism, or performance monitoring. Reference tables are re-read from CSV on every run. All tables are fully rebuilt every cycle (~every 6 hours).</p>
+</div>
+
+<h3>Evidence</h3>
+<div class="grid">
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">No pipeline orchestration</h4>
+<p>The only scheduling artifact is <span class="mono">run_all_refresh.sh</span> — a local bash script that chains Python scripts for dashboard CSV exports. It is not the platform ETL. No Databricks Jobs, Airflow DAGs, or workflow definitions were found in the repository. Pipeline cadence (~6 hours) is inferred from Delta table history, not from any configuration.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">No execution telemetry</h4>
+<p>The notebook calls <span class="mono">write_table(final_df, table_name="dim_project")</span> at the end with no timing instrumentation — no start/end timestamps logged, no row count validation, no success/failure alerting. If the pipeline fails silently, there is no mechanism to detect stale data until a consumer notices.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">CSV re-reads every run</h4>
+<p>8 reference tables are loaded via <span class="mono">spark.createDataFrame(pd.read_csv("/Workspace/Shared/PDS/.../reference_tables/X.csv"))</span> on every pipeline execution. This introduces latency, bypasses Spark's optimized Delta reader, and has no caching across runs. If a CSV file is accidentally modified or deleted, the entire pipeline fails.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--amber)">
+<h4 style="font-size:.82rem">Full-table rebuilds</h4>
+<p>Every ~6-hour cycle fully rebuilds all source-specific dims, ID resolution tables, and <span class="mono">dim_project</span> from scratch. For <span class="mono">dim_project_finance</span> (1.77M rows) and <span class="mono">dim_project</span> (2.27M rows), this is a significant compute cost when typically only a small fraction of rows have changed upstream.</p>
+</div>
+</div>
+
+<h3>Recommendations</h3>
+<div class="grid">
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R3.1 — Implement Databricks Workflows</h4>
+<p>Define the full pipeline as a Databricks Workflow with explicit task dependencies: source dims (parallelizable) → ID resolution → <span class="mono">dim_project</span> → facts → snapshots. This enables correct ordering, automatic retry on failure, email/Slack alerting, and a visual DAG for monitoring. Store the workflow definition as code (YAML or Terraform) in the repository.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R3.2 — Add pipeline_execution_log</h4>
+<p>Create a <span class="mono">pipeline_execution_log</span> Delta table that records: table name, start timestamp, end timestamp, rows read, rows written, duration, and status. Instrument the <span class="mono">pds_gold_write.write_table()</span> utility to log automatically. Build a monitoring view or dashboard that alerts when execution time exceeds 2× the rolling average or when data is older than the expected SLA.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R3.3 — Cache reference tables as Delta</h4>
+<p>Persist the 8 CSV reference tables as Delta tables (overlaps with R1.2). Replace <span class="mono">pd.read_csv()</span> calls with <span class="mono">spark.read.table("ref_asset_type")</span>. Delta reader is orders of magnitude faster than CSV parsing, and Spark can cache these small tables in memory across notebook cells.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R3.4 — Evaluate incremental MERGE</h4>
+<p>Instead of full-table rebuilds, use Delta Lake <span class="mono">MERGE INTO</span> to process only rows that changed upstream. Requires: (a) reliable <span class="mono">updated_at</span> or version column in curated source tables, (b) a watermark tracking the last-processed timestamp. For <span class="mono">dim_project_finance</span>, this could reduce the per-cycle processing from 1.77M rows to ~10K changed rows.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R3.5 — Add data freshness monitoring</h4>
+<p>Create a <span class="mono">vw_data_freshness</span> view that compares <span class="mono">snapshot_version_tracking.snapshot_timestamp</span> against <span class="mono">current_timestamp()</span> for each tracked table. Alert when any table's latest snapshot is older than the expected refresh interval (e.g., 8 hours). Integrate with existing monitoring/alerting infrastructure.</p>
+</div>
+</div>
+
+<!-- ─── CONCERN 4 ─── -->
+<h2>4. Static &amp; Abandoned Tables</h2>
+<div class="issue warn">
+<b>Problem</b>
+<p><strong>10 tables have 0 rows</strong> (including development artifacts like <span class="mono">fact_currency_conversion_dev_pm</span> and <span class="mono">fact_project_milestone_dev_pm</span>). <strong>7 tables</strong> use a <span class="mono">_dev_pm</span> suffix that appear to be development prototypes never promoted to production. Test artifacts (<span class="mono">dummy_table2</span>, <span class="mono">test_pds_table</span>) pollute the schema. <strong>31+ tables</strong> have fewer than 100 rows with unclear ownership and update cadence. The 407-object flat namespace makes it difficult for consumers and AI agents to distinguish production-ready tables from experimental or abandoned ones.</p>
+</div>
+
+<h3>Evidence</h3>
+<table class="table-stats">
+<thead><tr><th>Category</th><th>Tables</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Empty tables (0 rows)</td><td class="mono">10</td><td><span class="mono">amer_project_id_resolution_v2</span>, <span class="mono">dim_revenue_milestone_dev_pm</span>, <span class="mono">dim_schedule_milestone_dev_pm</span>, <span class="mono">dummy_table2</span>, <span class="mono">fact_currency_conversion_dev_pm</span>, <span class="mono">fact_project_milestone_dev_pm</span>, <span class="mono">fact_project_review_dev_pm</span>, <span class="mono">fact_resource_schedule_dev_pm</span>, <span class="mono">fact_survey_response_dev_pm</span>, <span class="mono">placemat_tracker</span></td></tr>
+<tr><td>Dev prototypes (<span class="mono">_dev_pm</span>)</td><td class="mono">~23</td><td>Includes populated tables like <span class="mono">dim_employee_dev_pm</span> (327K rows) that shadow production <span class="mono">dim_employee</span> (284K rows) — consumers may query the wrong one.</td></tr>
+<tr><td>Test artifacts</td><td class="mono">2</td><td><span class="mono">dummy_table2</span> (0 rows, 2 cols) and <span class="mono">test_pds_table</span> (2 rows, 3 cols)</td></tr>
+<tr><td>Manual/config tables (&lt;100 rows)</td><td class="mono">31</td><td>Includes <span class="mono">emea_country_currency_mapping</span> (50 rows), <span class="mono">contract_details</span> (87 rows), <span class="mono">pds_email_ingestion_config</span> (1 row), various Smartsheet imports</td></tr>
+<tr><td>CSV-only reference tables</td><td class="mono">8</td><td><span class="mono">asset_type</span>, <span class="mono">delivery_model</span>, <span class="mono">fitout_type</span>, <span class="mono">industry</span>, <span class="mono">project_type</span>, <span class="mono">customer_type</span>, <span class="mono">service_type</span>, <span class="mono">clarizen_markets</span> — loaded at runtime, not persisted as tables</td></tr>
+</tbody>
+</table>
+
+<div class="note"><strong>Notebook To Do reference.</strong> Lines 847–853 of the <span class="mono">dim_project</span> notebook: <em>"convert managed_spend to USD... these tables (dim_currency and fact_currency_conversion) do not exist yet"</em> — yet <span class="mono">fact_currency_conversion_dev_pm</span> exists with 0 rows and <span class="mono">dim_currency_dev_pm</span> has 80 rows. The production versions (<span class="mono">dim_currency</span> with 306 rows, <span class="mono">dim_currency_conversion</span> with 4.49M rows) were created separately, but the dev versions were never cleaned up.</div>
+
+<h3>Recommendations</h3>
+<div class="grid">
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R4.1 — Create a ref_data_dictionary table</h4>
+<p>Build a <span class="mono">ref_data_dictionary</span> Delta table that classifies every schema object by: <strong>lifecycle status</strong> (production, development, deprecated, manual), <strong>grain</strong> (one row per...), <strong>owner</strong> (team or individual), <strong>refresh cadence</strong>, and <strong>description</strong>. This serves as the single entry point for consumers and AI agents to understand the schema. Maintain it as part of the pipeline — new tables must be registered before they are written.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R4.2 — Remove or promote _dev_pm tables</h4>
+<p>Audit the ~23 <span class="mono">_dev_pm</span> tables. For each: if the production version exists and is current, drop the dev copy. If the dev version is ahead of production (e.g., <span class="mono">dim_employee_dev_pm</span> with more rows than <span class="mono">dim_employee</span>), promote it. If it represents a planned feature (e.g., <span class="mono">fact_project_milestone_dev_pm</span>), create a tracking item and move to a separate <span class="mono">pds_gold_dev</span> schema.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R4.3 — Drop test artifacts</h4>
+<p>Remove <span class="mono">dummy_table2</span> and <span class="mono">test_pds_table</span> from the production schema. If needed for testing, create them in a dedicated <span class="mono">pds_gold_test</span> schema with restricted visibility.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R4.4 — Prioritize currency conversion</h4>
+<p>The notebook author identified this as a critical gap. Production <span class="mono">dim_currency_conversion</span> exists with 4.49M FX rates — integrate it into the <span class="mono">dim_project</span> build to compute <span class="mono">managed_spend_usd</span>. Use the project's end date period for rate selection. Drop <span class="mono">managed_spend</span> for projects without a valid currency code (as the author recommends: "don't want to call a 1 billion peso project 1 billion USD").</p>
+</div>
+<div class="card" style="border-left:3px solid var(--lime)">
+<h4 style="font-size:.82rem">R4.5 — Establish ownership for manual tables</h4>
+<p>For tables like <span class="mono">contract_details</span> (87 rows), <span class="mono">emea_country_currency_mapping</span> (50 rows), and Smartsheet-sourced tables: assign an owner, document the update process, and set a refresh SLA. Consider automating Smartsheet ingestion via the Smartsheet API rather than manual uploads. Record all of this in <span class="mono">ref_data_dictionary</span>.</p>
+</div>
+</div>
+
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- dim_project GAPS tab                                           -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<section id="panel-dimgaps" class="tab-panel" role="tabpanel">
+<h1>curated.project vs dim_project — Field Gap Analysis</h1>
+<p class="sub">Comparing field coverage between the broad <span class="mono">curated.project</span> table (333 cols) and the unified <span class="mono">dim_project</span> (68 cols) for Clarizen &amp; Ingenious sources. Fields were matched by value-level comparison on 200–500 joined sample records, not just name similarity.</p>
+
+<div class="stats">
+<div class="stat"><b>333</b><span>curated cols</span></div>
+<div class="stat"><b>68</b><span>dim_project cols</span></div>
+<div class="stat"><b>30</b><span>Confirmed maps</span></div>
+<div class="stat"><b>8</b><span>Concept maps</span></div>
+<div class="stat"><b>50</b><span>Financial only</span></div>
+<div class="stat"><b>29</b><span>True gaps</span></div>
+<div class="stat"><b>6</b><span>HIGH impact</span></div>
+</div>
+
+<!-- ─── TOP GAPS ─── -->
+<h2>Top 6 Gaps to Address</h2>
+<p class="sub">These well-populated curated fields carry project-relevant data and have no equivalent in <span class="mono">dim_project</span>.</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))">
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem"><span style="color:var(--rose)">★</span> unitofmeasure</h4>
+<p><strong>CLZ: 57% · ING: 100%</strong> — Unit of measure for area fields (Square Feet, Square Meters). Without this, <span class="mono">managed_sf</span> values are ambiguous and cross-project comparisons are unreliable.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem"><span style="color:var(--rose)">★</span> percentcompleted</h4>
+<p><strong>CLZ: 96%</strong> — Percent completion (0–100). Key project progress KPI, nearly universally populated in Clarizen, completely absent from dim_project.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem"><span style="color:var(--rose)">★</span> schedulestatus</h4>
+<p><strong>CLZ: 96% · ING: 100%</strong> — RAG status for schedule health (Green / Yellow / Red). Critical for project health dashboards and portfolio reporting.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem"><span style="color:var(--rose)">★</span> projectbudgetstatus</h4>
+<p><strong>CLZ: 96% · ING: 40%</strong> — Budget health status (On Track, At Risk, etc.). Critical for financial health monitoring and executive summaries.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem"><span style="color:var(--rose)">★</span> billableindicator</h4>
+<p><strong>CLZ: 96%</strong> — Whether the project is billable (true / false). Key for financial categorization, revenue recognition, and billing analytics.</p>
+</div>
+<div class="card" style="border-left:3px solid var(--rose)">
+<h4 style="font-size:.82rem"><span style="color:var(--rose)">★</span> stagetext</h4>
+<p><strong>CLZ: 56%</strong> — Project stage (Project Delivery, Pre-construction, Design, etc.). <span class="mono">dim_project.stage</span> only populates from DSSF; Clarizen stage data is entirely lost.</p>
+</div>
+</div>
+
+<!-- ─── CONFIRMED MAPPINGS ─── -->
+<h2>Confirmed Field Mappings</h2>
+<p class="sub">30 curated fields successfully carried into dim_project, confirmed via value-level comparison on joined records. Plus 8 concept matches where the same data is stored in a different representation (e.g., name → code via reference table).</p>
+
+<table class="table-stats">
+<thead><tr><th>curated.project field</th><th>dim_project field</th><th>Method</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td class="mono">projectname</td><td class="mono">name</td><td>exact</td><td>99%</td></tr>
+<tr><td class="mono">city</td><td class="mono">city</td><td>exact</td><td>98%</td></tr>
+<tr><td class="mono">country</td><td class="mono">country</td><td>exact</td><td>99%</td></tr>
+<tr><td class="mono">phasetext</td><td class="mono">phase</td><td>exact</td><td>100%</td></tr>
+<tr><td class="mono">state</td><td class="mono">clarizen_status / ingenious_status</td><td>exact</td><td>100%</td></tr>
+<tr><td class="mono">description</td><td class="mono">description</td><td>exact</td><td>100%</td></tr>
+<tr><td class="mono">currencytype</td><td class="mono">managed_spend_base_currency</td><td>exact</td><td>100%</td></tr>
+<tr><td class="mono">startdatetime</td><td class="mono">start_date</td><td>date-truncated</td><td>96%</td></tr>
+<tr><td class="mono">duedatetime / actualenddatetime</td><td class="mono">end_date</td><td>date-truncated</td><td>67–100%</td></tr>
+<tr><td class="mono">projectmanageruseridentifer</td><td class="mono">project_manager_id</td><td>id-match</td><td>~75%</td></tr>
+<tr><td class="mono">teamleaduseridentifer</td><td class="mono">team_lead_id</td><td>id-match</td><td>~79%</td></tr>
+<tr><td class="mono">projectservicetypename</td><td class="mono">service_type</td><td>exact</td><td>98%</td></tr>
+<tr><td class="mono">projectjllroletext</td><td class="mono">delivery_model</td><td>partial</td><td>88%</td></tr>
+<tr><td class="mono">customertyptext</td><td class="mono">customer_type</td><td>exact</td><td>98%</td></tr>
+<tr><td class="mono">fitouttype</td><td class="mono">fitout_type</td><td>exact</td><td>100%</td></tr>
+<tr><td class="mono">totalapprovedbudgetamount</td><td class="mono">managed_spend</td><td>exact</td><td>100%</td></tr>
+<tr><td class="mono">projectdocumenturltext</td><td class="mono">document_folder_url</td><td>exact</td><td>100%</td></tr>
+<tr><td class="mono">locationname</td><td class="mono">address</td><td>exact</td><td>88%</td></tr>
+<tr><td class="mono">projecttypename / jllprojecttypetext</td><td class="mono">project_type</td><td>ref-table-resolved</td><td>65%</td></tr>
+<tr><td class="mono">grossarea / rentablearea / usablearea</td><td class="mono">managed_sf</td><td>COALESCE of 3 areas</td><td>70–85%</td></tr>
+<tr><td class="mono">workitemidentifier / migratedprojectid</td><td class="mono">code</td><td>indirect</td><td>~99%</td></tr>
+<tr><td class="mono">domainname</td><td class="mono">ingenious_domain</td><td>exact</td><td>99.8%</td></tr>
+<tr><td class="mono">sector</td><td class="mono">asset_type</td><td>partial</td><td>55%</td></tr>
+<tr><td class="mono">customid</td><td class="mono">code (Ingenious)</td><td>exact</td><td>93%</td></tr>
+</tbody>
+</table>
+
+<h3>Concept Matches (same data, different representation)</h3>
+<table class="table-stats">
+<thead><tr><th>curated field</th><th>dim_project field</th><th>Transformation</th></tr></thead>
+<tbody>
+<tr><td class="mono">regionname</td><td class="mono">market_id</td><td>Text → code (e.g. "AM" → "AM0001") via ref table</td></tr>
+<tr><td class="mono">majormarketname</td><td class="mono">market_id</td><td>Text → code (e.g. "Northeast" → "AM3402") via ref table</td></tr>
+<tr><td class="mono">minormarketname</td><td class="mono">market_id</td><td>Text → code via ref table</td></tr>
+<tr><td class="mono">jllbusinessline</td><td class="mono">business_line_id</td><td>Name → code (e.g. "PDS Dedicated" → "350007")</td></tr>
+<tr><td class="mono">companyidentifier</td><td class="mono">customer_name</td><td>URI → resolved company name</td></tr>
+<tr><td class="mono">propertyidentifier</td><td class="mono">ovcid / address</td><td>Property ID → resolved location</td></tr>
+<tr><td class="mono">sourceprojectidentifier</td><td class="mono">code</td><td>Source-specific project ID</td></tr>
+<tr><td class="mono">sourceprojectid</td><td class="mono"><em>(join key only)</em></td><td>Used to link curated → dim, not stored</td></tr>
+</tbody>
+</table>
+
+<!-- ─── ALL TRUE GAPS ─── -->
+<h2>All True Gaps — 29 Project-Relevant Fields Missing</h2>
+<p class="sub">Fields that are well-populated in <span class="mono">curated.project</span> for Clarizen and/or Ingenious but have no equivalent column in <span class="mono">dim_project</span>. Population rates shown for each source. <span style="color:var(--rose)">★ HIGH</span> &nbsp; <span style="color:var(--amber)">◆ MEDIUM</span> &nbsp; <span style="color:var(--muted)">○ LOW</span></p>
+
+<h3>Status &amp; Progress — 5 fields, 3 HIGH</h3>
+<table class="table-stats">
+<thead><tr><th></th><th>Field</th><th>Clarizen</th><th>Ingenious</th><th>Description</th><th>Impact</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--rose)">★</td><td class="mono">schedulestatus</td><td>96.3%</td><td>100%</td><td>Schedule health (Green / Yellow / Red)</td><td>Critical for dashboards</td></tr>
+<tr><td style="color:var(--rose)">★</td><td class="mono">projectbudgetstatus</td><td>96.3%</td><td>39.7%</td><td>Budget health (On Track, At Risk)</td><td>Financial monitoring</td></tr>
+<tr><td style="color:var(--rose)">★</td><td class="mono">percentcompleted</td><td>96.3%</td><td>—</td><td>Completion percentage (0–100)</td><td>Key project KPI</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">risklevelcode</td><td>35.4%</td><td>—</td><td>Risk classification (Low, Medium-High, High)</td><td>Risk-based filtering</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">risktext</td><td>—</td><td>98.4%</td><td>Risk text (Ingenious-specific)</td><td>Ingenious risk field</td></tr>
+</tbody>
+</table>
+
+<h3>Project Context — 7 fields, 3 HIGH</h3>
+<table class="table-stats">
+<thead><tr><th></th><th>Field</th><th>Clarizen</th><th>Ingenious</th><th>Description</th><th>Impact</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--rose)">★</td><td class="mono">unitofmeasure</td><td>56.6%</td><td>100%</td><td>UOM for area (Square Feet / Square Meters)</td><td>managed_sf is meaningless without it</td></tr>
+<tr><td style="color:var(--rose)">★</td><td class="mono">billableindicator</td><td>96.3%</td><td>—</td><td>Whether project is billable</td><td>Financial categorization</td></tr>
+<tr><td style="color:var(--rose)">★</td><td class="mono">stagetext</td><td>55.7%</td><td>—</td><td>Project stage (Delivery, Pre-construction, Design)</td><td>dim.stage only from DSSF; Clarizen lost</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">templateworktypetext</td><td>95.9%</td><td>—</td><td>Clarizen template (encodes client+region+worktype)</td><td>Workflow identification</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">templatetext</td><td>82.4%</td><td>—</td><td>Clarizen project template</td><td>Similar to templateworktypetext</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">planningstatustext</td><td>54.5%</td><td>—</td><td>Planning status (Active, Closed, Deferred)</td><td>Additional status dimension</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">leasedofownedtext</td><td>—</td><td>19.4%</td><td>Leased or owned property</td><td>Property context</td></tr>
+</tbody>
+</table>
+
+<h3>Dates &amp; Duration — 6 fields</h3>
+<table class="table-stats">
+<thead><tr><th></th><th>Field</th><th>Clarizen</th><th>Ingenious</th><th>Description</th><th>Impact</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">baselinestartdatetime</td><td>30.0%</td><td>42.1%</td><td>Original planned start date</td><td>Schedule variance analysis</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">baselineduedatetime</td><td>30.0%</td><td>42.2%</td><td>Original planned end date</td><td>Schedule variance analysis</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">duration</td><td>96.3%</td><td>41.5%</td><td>Project duration</td><td>Derivable from start/end</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">constructionenddatetime</td><td>27.9%</td><td>—</td><td>Construction end date</td><td>Construction-specific</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">projectinitiationdatetime</td><td>19.0%</td><td>—</td><td>Project initiation date</td><td>Lead time analysis</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">plannedyearidentifier</td><td>37.7%</td><td>—</td><td>Planned execution year</td><td>Derivable from start date</td></tr>
+</tbody>
+</table>
+
+<h3>People &amp; Organization — 7 fields</h3>
+<table class="table-stats">
+<thead><tr><th></th><th>Field</th><th>Clarizen</th><th>Ingenious</th><th>Description</th><th>Impact</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">contactidentifier</td><td>—</td><td>58.9%</td><td>Primary contact ID (Ingenious)</td><td>Primary project contact</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">coordinatornameuseridentifer</td><td>38.7%</td><td>11.9%</td><td>Project coordinator user ID</td><td>Third team role not captured</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">programidentifier</td><td>17.4%</td><td>23.8%</td><td>Program ID (groups related projects)</td><td>Program-level reporting</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">parentworkitemidentifier</td><td>17.4%</td><td>—</td><td>Parent project / work item ID</td><td>Project hierarchy</td></tr>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">customerprojectnumber</td><td>19.8%</td><td>—</td><td>Customer's own project number</td><td>Client cross-referencing</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">customerbusinessunitidentifier</td><td>21.9%</td><td>—</td><td>Customer business unit</td><td>Customer org data</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">customerprojectmanagername</td><td>15.4%</td><td>—</td><td>Customer's project manager</td><td>Customer-side PM</td></tr>
+</tbody>
+</table>
+
+<h3>Scoring &amp; Priority — 2 fields</h3>
+<table class="table-stats">
+<thead><tr><th></th><th>Field</th><th>Clarizen</th><th>Ingenious</th><th>Description</th><th>Impact</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--amber)">◆</td><td class="mono">projectpriorityscorenumber</td><td>96.3%</td><td>—</td><td>Project priority score</td><td>Prioritization metric</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">elementscorenumber</td><td>43.7%</td><td>—</td><td>Element score (capital planning)</td><td>Capital planning score</td></tr>
+</tbody>
+</table>
+
+<h3>Text &amp; Notes — 2 fields</h3>
+<table class="table-stats">
+<thead><tr><th></th><th>Field</th><th>Clarizen</th><th>Ingenious</th><th>Description</th><th>Impact</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--muted)">○</td><td class="mono">overallsummary</td><td>26.3%</td><td>—</td><td>Project overall summary text</td><td>Free text, manual reference</td></tr>
+<tr><td style="color:var(--muted)">○</td><td class="mono">projectcommenttext</td><td>25.2%</td><td>—</td><td>Project comments</td><td>Free text comments</td></tr>
+</tbody>
+</table>
+
+<!-- ─── FINANCIAL ─── -->
+<h2>Financial Detail Fields — 50 Fields in curated, Not in dim</h2>
+<div class="issue warn">
+<b>Observation</b>
+<p><span class="mono">dim_project</span> carries only <span class="mono">managed_spend</span> (≈ <span class="mono">totalapprovedbudgetamount</span>). The remaining <strong>50 financial detail fields</strong> in <span class="mono">curated.project</span> — commitments, invoices, change orders, retention, pay applications, cost per area, variance — are <strong>not available in dim_project or any fact table</strong> in the schema. These fields are typically 39–96% populated for Clarizen and 20–100% for Ingenious.</p>
+</div>
+
+<div style="columns:2;column-gap:1rem;font-size:.78rem;color:var(--muted);margin:.75rem 0">
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">pendingcommitmentsamount</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">projectedtotalcommitmentsamount</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">varianceofbudgettocostamount</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">approvedcommitments</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">totalprojectedbudget</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">totalpendinginvoices</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">totalinvoices</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">totalapprovedinvoicesamount</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">remainingbalancetoinvoice</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">approvedchangesandtransfers</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">pendingchangesandtransfers</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">additionalforecastedcosts</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">anticipatedcosttocomplete</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">originalbudgetamount</span> CLZ:96%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">costperarea</span> CLZ:25%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">totalestimatedamount</span> CLZ:52% ING:100%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">totalpaidvalue</span> ING:44%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">currentbudget</span> ING:44%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">executedchangeorders</span> ING:39%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">pendingchangeorders</span> ING:39%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">unallocatedfunds</span> ING:39%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">grosspreviousapplicationsamount</span> ING:39%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">grosscurrentapplicationsamount</span> ING:39%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">grosstotalcompletedandstoredamount</span> ING:44%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">varianceofbudgetamount</span> ING:44%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">totalretentionamount</span> ING:44%</div>
+<div style="break-inside:avoid;margin-bottom:.35rem"><span class="mono">+ 24 more retention / invoice / commitment fields</span></div>
+</div>
+
+<div class="note"><strong>Design consideration.</strong> Financial detail fields would normally live in fact tables (e.g., <span class="mono">fact_project_financials</span>), not in a dimension. The schema has 18 <span class="mono">fact_*</span> tables, but none carry these project-level financial snapshots. This means consumers who need commitment, invoice, or budget variance data must query <span class="mono">curated.project</span> directly, bypassing the dimensional model.</p></div>
+
+<!-- ─── METADATA ─── -->
+<h2>Excluded from Analysis — 22 Metadata Fields</h2>
+<p class="sub">These curated fields are system tracking / ETL metadata and were intentionally excluded from the gap assessment.</p>
+<div style="font-size:.78rem;color:var(--muted);line-height:1.7;margin:.5rem 0">
+<span class="mono" style="margin-right:.75rem">id</span>
+<span class="mono" style="margin-right:.75rem">sourcesystem</span>
+<span class="mono" style="margin-right:.75rem">isdeleted</span>
+<span class="mono" style="margin-right:.75rem">udp_create_ts</span>
+<span class="mono" style="margin-right:.75rem">udp_update_ts</span>
+<span class="mono" style="margin-right:.75rem">udp_hash</span>
+<span class="mono" style="margin-right:.75rem">udp_delete_flag</span>
+<span class="mono" style="margin-right:.75rem">sourcemodifiedby</span>
+<span class="mono" style="margin-right:.75rem">sourcelastupdateddatetime</span>
+<span class="mono" style="margin-right:.75rem">sourcecreatedby</span>
+<span class="mono" style="margin-right:.75rem">sourcecreateddatetime</span>
+<span class="mono" style="margin-right:.75rem">weburltext</span>
+<span class="mono" style="margin-right:.75rem">projecturl</span>
+<span class="mono" style="margin-right:.75rem">externalruntimeidentifier</span>
+<span class="mono" style="margin-right:.75rem">spendingintegrationtext</span>
+<span class="mono" style="margin-right:.75rem">spendprojectintegrationflag</span>
+<span class="mono" style="margin-right:.75rem">projectstatusmanuallysetflag</span>
+<span class="mono" style="margin-right:.75rem">statusid</span>
+<span class="mono" style="margin-right:.75rem">health</span>
+<span class="mono" style="margin-right:.75rem">scheduledhealth</span>
+<span class="mono" style="margin-right:.75rem">tags</span>
+<span class="mono" style="margin-right:.75rem">customattributes</span>
+</div>
+
+<!-- ─── METHODOLOGY ─── -->
+<h2>Methodology</h2>
+<div class="issue info">
+<b>How mappings were verified</b>
+<p>Rather than relying on column name similarity (which would miss renames like <span class="mono">locationname</span> → <span class="mono">address</span>), we joined 200–500 matched records through the full resolution chain (<span class="mono">curated.project</span> → <span class="mono">dim_project_clarizen/ingenious</span> → <span class="mono">id_resolution_project</span> → <span class="mono">dim_project</span>) and compared actual field values. For each curated field, every dim_project field was scored by the percentage of records where the values matched (exact or substring). A 30%+ match indicates the fields carry the same data. This approach correctly identified non-obvious mappings (e.g., <span class="mono">totalapprovedbudgetamount</span> → <span class="mono">managed_spend</span>, <span class="mono">regionname</span> → <span class="mono">market_id</span>) and confirmed false negatives (e.g., <span class="mono">stagetext</span> at 0% match with <span class="mono">stage</span> because dim only sources stage from DSSF, not Clarizen).</p>
+</div>
+
+</section>
+
+</div>
+<script>
+(function(){
+var tabs=document.querySelectorAll('.tabs [data-tab]');
+var panels=document.querySelectorAll('.tab-panel');
+function show(id){
+  panels.forEach(function(p){p.classList.toggle('active',p.id==='panel-'+id);});
+  tabs.forEach(function(b){var on=b.getAttribute('data-tab')===id;b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');});
+}
+tabs.forEach(function(btn){btn.addEventListener('click',function(){show(btn.getAttribute('data-tab'));});});
+var hash=location.hash.replace(/^#/,'');
+if(hash&&document.getElementById('panel-'+hash))show(hash);
+window.addEventListener('hashchange',function(){var h=location.hash.replace(/^#/,'');if(h&&document.getElementById('panel-'+h))show(h);});
+})();
+</script>
+</body>
+</html>
