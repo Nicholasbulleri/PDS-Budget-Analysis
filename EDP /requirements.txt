@@ -1,0 +1,19 @@
+# Environment variable management
+python-dotenv
+
+# Databricks SQL Connector
+databricks-sql-connector
+
+# Azure AD authentication (required for JLL)
+azure-identity
+
+# HTTP requests for REST API calls
+requests
+
+# Budget dashboard (local visualization)
+streamlit
+pandas
+
+# MySQL database connectors (for AWS database)
+mysql-connector-python
+pymysql

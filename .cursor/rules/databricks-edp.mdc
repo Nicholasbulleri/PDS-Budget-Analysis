@@ -1,0 +1,33 @@
+---
+description: Databricks/EDP connection rules for running SQL and Python scripts
+alwaysApply: true
+---
+
+# Databricks / EDP Connection
+
+When running any Python script that connects to Databricks (EDP), always use `required_permissions: ["all"]` in the Shell tool. This disables the Cursor sandbox so the Databricks OAuth browser login can open and complete.
+
+Scripts that need this include:
+- Any file under `Python/` (including `Python/analysis/`, `Python/run/`, etc.) that imports `edp_connection` or `execute_query`
+- Any script that runs SQL against Databricks
+
+## Connection details
+
+- Auth: Databricks OAuth (browser login) by default (`DATABRICKS_AUTH_MODE=browser`)
+- Server: `adb-2797612873867894.14.azuredatabricks.net`
+- Warehouse: `/sql/1.0/warehouses/7c126f1ffa0e181e`
+- SSL verification is disabled via `.env` (`DATABRICKS_INSECURE=true` or `EDP_SSL_VERIFY=false`)
+- Connection config lives in `Python/edp_connection.py`, env vars in `.env`
+
+## Running SQL files
+
+To run a `.sql` file against Databricks from Cursor:
+
+```python
+from edp_connection import execute_query
+with open("sql/your_query.sql") as f:
+    query = f.read()
+columns, results = execute_query(query)
+```
+
+Always run with `required_permissions: ["all"]` so the browser can open for login.
